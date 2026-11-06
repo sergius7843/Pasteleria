@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies Pastelería | Ocasiones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- =================================================================
+         TOP / ENCABEZADO FIJO
+         ================================================================= -->
+    <header class="site-header">
+        <div class="top-utility-bar">
+            <div class="utility-left">
+                <button class="icon-btn" id="btn-hamburger" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="contacto.html#sucursales" class="icon-btn" title="Ver nuestras sucursales">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand-logo">
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img" onerror="this.style.display='none'">
+                <div class="brand-text">
+                
+                </div>
+            </a>
+
+            <div class="utility-right">
+                <button class="icon-btn" id="btn-search" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn" id="btn-user" aria-label="Iniciar sesión o registrarse">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="btn-cart" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <!-- Pestaña Ocasiones activa -->
+                <li><a href="ocasiones.html" class="nav-link active">Ocasiones</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menú Hamburguesa -->
+        <div class="hamburger-dropdown" id="hamburger-menu">
+            <ul class="hamburger-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fa-solid fa-cake-candles"></i> Productos</a></li>
+                <li><a href="ocasiones.html"><i class="fa-solid fa-gift"></i> Ocasiones</a></li>
+                <li><a href="nosotros.html"><i class="fa-solid fa-heart"></i> Nosotros</a></li>
+                <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Card de Búsqueda -->
+        <div class="search-card-dropdown" id="search-card">
+            <div class="search-card-header">
+                <h3>Buscar</h3>
+                <button class="close-btn" id="close-search"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="¿Qué antojo estás buscando hoy?">
+            </div>
+            <div class="search-section">
+                <h4>Búsquedas populares</h4>
+                <div class="trending-pills">
+                    <a href="ocasiones.html" class="pill">cumpleaños</a>
+                    <a href="productos.html" class="pill">brownies</a>
+                    <a href="productos.html" class="pill">selva negra</a>
+                    <a href="productos.html" class="pill">tortas</a>
+                    <a href="index.html" class="pill">galletas</a>
+                    <a href="productos.html" class="pill">queques</a>
+                </div>
+            </div>
+            <div class="search-section">
+                <h4>Comprar por categoría</h4>
+                <ul class="category-search-list">
+                    <li><a href="ocasiones.html">Regalos de Cumpleaños</a></li>
+                    <li><a href="productos.html">Tortas Personalizadas</a></li>
+                    <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card del Carrito -->
+        <div class="cart-card-dropdown" id="cart-card">
+            <div class="cart-card-header">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h3>
+                <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items-container" id="cart-items"></div>
+            <div class="cart-card-footer">
+                <div class="cart-total">
+                    <span>Total estimado:</span>
+                    <strong id="cart-total-price">Bs. 0</strong>
+                </div>
+                <a href="contacto.html" class="btn-primary full-width">Finalizar pedido por WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         CONTENIDO OCASIONES (Captura 3)
+         ================================================================= -->
+    <main class="occasions-main">
+        <!-- 1. CUMPLEAÑOS (2 Cards a la izquierda, texto a la derecha) -->
+        <section class="occasion-row cards-left">
+            <div class="catalog-cards">
+                <!-- =========================================================
+                     IMAGEN DE CARD CUMPLEAÑOS 1:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/cumpleanos-1.jpg" alt="Cumpleaños 1"> -->
+                </div>
+
+                <!-- =========================================================
+                     IMAGEN DE CARD CUMPLEAÑOS 2:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/cumpleanos-2.jpg" alt="Cumpleaños 2"> -->
+                </div>
+            </div>
+            <div class="catalog-info">
+                <h2>CUMPLEAÑOS</h2>
+                <p>Déjate conquistar por nuestros irresistibles brownies, con una textura suave, un intenso sabor a chocolate y ese toque dulce que convierte cada bocado en un momento especial.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Box Cumpleaños" data-price="85">
+                    Añadir Box Cumpleaños (Bs. 85)
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. AMOR Y AMISTAD (Texto a la izquierda, 2 Cards a la derecha) -->
+        <section class="occasion-row cards-right">
+            <div class="catalog-info">
+                <h2>AMOR Y AMISTAD</h2>
+                <p>Sorprende a esa persona especial con dulces detalles hechos para compartir y expresar tu cariño.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Detalle Amor y Amistad" data-price="60">
+                    Añadir Detalle Dulce (Bs. 60)
+                </button>
+            </div>
+            <div class="catalog-cards">
+                <!-- =========================================================
+                     IMAGEN DE CARD AMOR Y AMISTAD 1:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/amor-amistad-1.jpg" alt="Amor y Amistad 1"> -->
+                </div>
+
+                <!-- =========================================================
+                     IMAGEN DE CARD AMOR Y AMISTAD 2:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/amor-amistad-2.jpg" alt="Amor y Amistad 2"> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. REUNIONES Y EVENTOS (2 Cards a la izquierda, texto a la derecha) -->
+        <section class="occasion-row cards-left">
+            <div class="catalog-cards">
+                <!-- =========================================================
+                     IMAGEN DE CARD REUNIONES 1:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/reuniones-1.jpg" alt="Reuniones y Eventos 1"> -->
+                </div>
+
+                <!-- =========================================================
+                     IMAGEN DE CARD REUNIONES 2:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/reuniones-2.jpg" alt="Reuniones y Eventos 2"> -->
+                </div>
+            </div>
+            <div class="catalog-info">
+                <h2>REUNIONES Y EVENTOS</h2>
+                <p>Comparte momentos inolvidables con deliciosas opciones para tus reuniones, celebraciones y eventos especiales.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Catering Dulce Eventos" data-price="180">
+                    Añadir Pack Eventos (Bs. 180)
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. REGALOS (Texto a la izquierda, 2 Cards a la derecha) -->
+        <section class="occasion-row cards-right">
+            <div class="catalog-info">
+                <h2>REGALOS</h2>
+                <p>Regala sonrisas con dulces detalles ideales para sorprender y alegrar el día de alguien especial.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Caja de Regalo Especial" data-price="70">
+                    Añadir Caja Regalo (Bs. 70)
+                </button>
+            </div>
+            <div class="catalog-cards">
+                <!-- =========================================================
+                     IMAGEN DE CARD REGALOS 1:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/regalos-1.jpg" alt="Regalos 1"> -->
+                </div>
+
+                <!-- =========================================================
+                     IMAGEN DE CARD REGALOS 2:
+                     Descomenta <img> y coloca tu archivo en images/
+                     ========================================================= -->
+                <div class="square-card border-red">
+                    <!-- <img src="images/regalos-2.jpg" alt="Regalos 2"> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Usuario -->
+    <div class="modal-overlay" id="user-modal">
+        <div class="user-modal-card">
+            <button class="close-btn modal-close" id="close-user-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                <button class="tab-btn" data-tab="register">Registrarse</button>
+            </div>
+            <form class="auth-form active" id="form-login">
+                <h3>¡Bienvenido de nuevo!</h3>
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Contraseña</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Ingresar</button>
+            </form>
+            <form class="auth-form" id="form-register">
+                <h3>Crea tu cuenta dulce</h3>
+                <div class="form-group">
+                    <label for="reg-name">Nombre completo</label>
+                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Teléfono / WhatsApp</label>
+                    <input type="tel" id="reg-phone" placeholder="+591 68081109" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>INFORMACION</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Preguntas frecuentes</a></li>
+                    <li><a href="contacto.html">Políticas de compra</a></li>
+                    <li><a href="contacto.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIALES</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+            <a href="#" class="footer-arrow" title="Volver arriba"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

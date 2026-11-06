@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies Pastelería | Inicio</title>
+    <!-- Fuentes de Google para replicar tipografía de marca y textos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos de Font Awesome (WhatsApp, TikTok, Instagram, Carrito, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- =================================================================
+         TOP / ENCABEZADO FIJO (Presente en todas las páginas)
+         ================================================================= -->
+    <header class="site-header">
+        <!-- Nivel 1: Barra de utilidades y Logotipo central -->
+        <div class="top-utility-bar">
+            <div class="utility-left">
+                <button class="icon-btn" id="btn-hamburger" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="contacto.html#sucursales" class="icon-btn" title="Ver nuestras sucursales">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+
+            <!-- Logotipo Central -->
+            <a href="index.html" class="brand-logo">
+                <!-- =====================================================
+                     IMAGEN DEL LOGOTIPO PRINCIPAL
+                     Asegúrate de tener "images/logotipo.png"
+                     ===================================================== -->
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img" onerror="this.style.display='none'">
+                <div class="brand-text">
+                
+                </div>
+            </a>
+
+            <div class="utility-right">
+                <button class="icon-btn" id="btn-search" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn" id="btn-user" aria-label="Iniciar sesión o registrarse">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="btn-cart" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Nivel 2: Pestañas de navegación principales -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <li><a href="ocasiones.html" class="nav-link">Ocasiones</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menú desplegable Hamburguesa -->
+        <div class="hamburger-dropdown" id="hamburger-menu">
+            <ul class="hamburger-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fa-solid fa-cake-candles"></i> Productos</a></li>
+                <li><a href="ocasiones.html"><i class="fa-solid fa-gift"></i> Ocasiones</a></li>
+                <li><a href="nosotros.html"><i class="fa-solid fa-heart"></i> Nosotros</a></li>
+                <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Card Desplegable de Búsqueda (Referencia Imagen 6) -->
+        <div class="search-card-dropdown" id="search-card">
+            <div class="search-card-header">
+                <h3>Buscar</h3>
+                <button class="close-btn" id="close-search" aria-label="Cerrar búsqueda">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="¿Qué antojo estás buscando hoy?">
+            </div>
+            <div class="search-section">
+                <h4>Búsquedas populares</h4>
+                <div class="trending-pills">
+                    <a href="ocasiones.html" class="pill">cumpleaños</a>
+                    <a href="productos.html" class="pill">brownies</a>
+                    <a href="productos.html" class="pill">selva negra</a>
+                    <a href="productos.html" class="pill">tortas</a>
+                    <a href="index.html" class="pill">galletas</a>
+                    <a href="productos.html" class="pill">queques</a>
+                    <a href="ocasiones.html" class="pill">regalos</a>
+                </div>
+            </div>
+            <div class="search-section">
+                <h4>Comprar por categoría</h4>
+                <ul class="category-search-list">
+                    <li><a href="ocasiones.html">Regalos de Cumpleaños</a></li>
+                    <li><a href="productos.html">Tortas Personalizadas</a></li>
+                    <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card Desplegable de Carrito de Compras -->
+        <div class="cart-card-dropdown" id="cart-card">
+            <div class="cart-card-header">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h3>
+                <button class="close-btn" id="close-cart" aria-label="Cerrar carrito">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="cart-items-container" id="cart-items">
+                <!-- Los productos se cargan dinámicamente desde scripts.js -->
+            </div>
+            <div class="cart-card-footer">
+                <div class="cart-total">
+                    <span>Total estimado:</span>
+                    <strong id="cart-total-price">Bs. 0</strong>
+                </div>
+                <a href="contacto.html" class="btn-primary full-width">Finalizar pedido por WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         CONTENIDO PRINCIPAL: CARRUSEL, MÁS VENDIDOS Y PEDIDOS ESPECIALES
+         ================================================================= -->
+    <main>
+        <!-- CARRUSEL PRINCIPAL -->
+        <section class="carousel-section">
+            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="carousel-track-container">
+                <!-- Slide 1 (Diseño principal de la captura 1) -->
+                <article class="carousel-slide active">
+                    <div class="slide-text">
+                        <h2>Producto de temporada</h2>
+                        <h3>Galletitas que dan miedo... ¡de lo lindas que son!</h3>
+                        <p>Endulza tu Halloween con nuestras galletas temáticas, decoradas con diseños espeluznantemente deliciosos. ¡Perfectas para regalar, compartir o disfrutar en tu fiesta!</p>
+                        <button class="btn-outline add-to-cart-btn" data-name="Pack Galletas de Temporada" data-price="35">
+                            Agregar al carrito (Bs. 35)
+                        </button>
+                    </div>
+                    <div class="slide-media">
+                        <!-- =================================================
+                             IMAGEN DE CARD CARRUSEL 1:
+                             Cambia el src="images/tu-imagen.jpg" cuando la tengas
+                             ================================================= -->
+                        <div class="square-card border-red">
+                            <!-- <img src="images/galletas-halloween.jpg" alt="Galletas temáticas de Halloween"> -->
+                            <span class="card-placeholder-hint">Espacio para imagen<br>(Carrusel 1)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="carousel-slide">
+                    <div class="slide-text">
+                        <h2>Especialidad de la casa</h2>
+                        <h3>¡Brownies recién horneados con intenso chocolate!</h3>
+                        <p>Textura húmeda por dentro y una capa crujiente por fuera. Ideales para acompañar tus tardes o compartir con tus personas favoritas.</p>
+                        <button class="btn-outline add-to-cart-btn" data-name="Caja de Brownies Clásicos" data-price="45">
+                            Agregar al carrito (Bs. 45)
+                        </button>
+                    </div>
+                    <div class="slide-media">
+                        <!-- =================================================
+                             IMAGEN DE CARD CARRUSEL 2:
+                             Descomenta la etiqueta <img> y coloca tu imagen
+                             ================================================= -->
+                        <div class="square-card border-red">
+                            <!-- <img src="images/carrusel-brownies.jpg" alt="Brownies clásicos"> -->
+                            <span class="card-placeholder-hint">Espacio para imagen<br>(Carrusel 2)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Slide 3 -->
+                <article class="carousel-slide">
+                    <div class="slide-text">
+                        <h2>Tortas a tu medida</h2>
+                        <h3>Celebraciones únicas con sabores inolvidables</h3>
+                        <p>Personalizamos cada detalle de tu torta para cumpleaños, aniversarios y eventos especiales. Haz tu pedido con anticipación.</p>
+                        <a href="productos.html" class="btn-outline">Ver catálogo de tortas</a>
+                    </div>
+                    <div class="slide-media">
+                        <!-- =================================================
+                             IMAGEN DE CARD CARRUSEL 3:
+                             Descomenta la etiqueta <img> y coloca tu imagen
+                             ================================================= -->
+                        <div class="square-card border-red">
+                            <!-- <img src="images/carrusel-tortas.jpg" alt="Tortas personalizadas"> -->
+                            <span class="card-placeholder-hint">Espacio para imagen<br>(Carrusel 3)</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <button class="carousel-arrow next" id="carousel-next" aria-label="Siguiente">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="carousel-dots" id="carousel-dots">
+                <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+                <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PRODUCTOS MÁS VENDIDOS -->
+        <section class="best-sellers-section" id="mas-vendidos">
+            <h2 class="section-title-light">PRODUCTOS MAS<br>VENDIDOS</h2>
+
+            <div class="best-sellers-grid">
+                <!-- Card 1: Brownies -->
+                <div class="best-seller-item">
+                    <!-- =====================================================
+                         IMAGEN DE CARD: BROWNIES
+                         Descomenta <img> y pon el nombre de tu imagen en images/
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/mas-vendido-brownies.jpg" alt="Brownies"> -->
+                    </div>
+                    <button class="pill-label add-to-cart-btn" data-name="Brownies Clásicos" data-price="25" title="Clic para añadir al carrito">
+                        BROWNIES
+                    </button>
+                </div>
+
+                <!-- Card 2: Brownies Almendras -->
+                <div class="best-seller-item">
+                    <!-- =====================================================
+                         IMAGEN DE CARD: BROWNIES ALMENDRAS
+                         Descomenta <img> y pon el nombre de tu imagen en images/
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/mas-vendido-almendras.jpg" alt="Brownies Almendras"> -->
+                    </div>
+                    <button class="pill-label add-to-cart-btn" data-name="Brownies con Almendras" data-price="30" title="Clic para añadir al carrito">
+                        BROWNIES ALMENDRAS
+                    </button>
+                </div>
+
+                <!-- Card 3: Selva Negra -->
+                <div class="best-seller-item">
+                    <!-- =====================================================
+                         IMAGEN DE CARD: SELVA NEGRA
+                         Descomenta <img> y pon el nombre de tu imagen en images/
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/mas-vendido-selva-negra.jpg" alt="Torta Selva Negra"> -->
+                    </div>
+                    <button class="pill-label add-to-cart-btn" data-name="Torta Selva Negra" data-price="95" title="Clic para añadir al carrito">
+                        SELVA NEGRA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PEDIDOS ESPECIALES -->
+        <section class="special-orders-section">
+            <div class="special-orders-container">
+                <div class="special-order-media">
+                    <!-- =====================================================
+                         IMAGEN DE CARD: PEDIDOS ESPECIALES
+                         Descomenta <img> y pon el nombre de tu imagen en images/
+                         ===================================================== -->
+                    <div class="square-card border-red">
+                        <!-- <img src="images/pedidos-especiales.jpg" alt="Pedidos Especiales"> -->
+                    </div>
+                </div>
+                <div class="special-order-text">
+                    <h2>PEDIDOS ESPECIALES</h2>
+                    <h3>¡Creamos algo dulce para tus momentos especiales!</h3>
+                    <p>Celebra a tu manera con nuestros productos personalizados. Cuéntanos tu idea y hagamos realidad un detalle delicioso para esa ocasión especial.</p>
+                    <a href="contacto.html" class="btn-primary">Cotizar pedido especial</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================================================================
+         MODAL DE USUARIO (LOGIN / REGISTRO EN MEDIO DE LA PANTALLA)
+         ================================================================= -->
+    <div class="modal-overlay" id="user-modal">
+        <div class="user-modal-card">
+            <button class="close-btn modal-close" id="close-user-modal" aria-label="Cerrar ventana">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                <button class="tab-btn" data-tab="register">Registrarse</button>
+            </div>
+
+            <!-- Formulario Login -->
+            <form class="auth-form active" id="form-login">
+                <h3>¡Bienvenido de nuevo!</h3>
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Contraseña</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Ingresar</button>
+            </form>
+
+            <!-- Formulario Registro -->
+            <form class="auth-form" id="form-register">
+                <h3>Crea tu cuenta dulce</h3>
+                <div class="form-group">
+                    <label for="reg-name">Nombre completo</label>
+                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Teléfono / WhatsApp</label>
+                    <input type="tel" id="reg-phone" placeholder="+591 68081109" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         BOTTOM / PIE DE PÁGINA (Visible al llegar al final de la página)
+         ================================================================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>INFORMACION</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Preguntas frecuentes</a></li>
+                    <li><a href="contacto.html">Políticas de compra</a></li>
+                    <li><a href="contacto.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIALES</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+            <a href="#" class="footer-arrow" title="Volver arriba" aria-label="Subir al inicio">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

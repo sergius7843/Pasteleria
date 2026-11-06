@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies Pastelería | Productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- =================================================================
+         TOP / ENCABEZADO FIJO
+         ================================================================= -->
+    <header class="site-header">
+        <div class="top-utility-bar">
+            <div class="utility-left">
+                <button class="icon-btn" id="btn-hamburger" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="contacto.html#sucursales" class="icon-btn" title="Ver nuestras sucursales">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand-logo">
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img" onerror="this.style.display='none'">
+                <div class="brand-text">
+                  
+                </div>
+            </a>
+
+            <div class="utility-right">
+                <button class="icon-btn" id="btn-search" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn" id="btn-user" aria-label="Iniciar sesión o registrarse">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="btn-cart" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <!-- Clase "active" remarca la pestaña actual -->
+                <li><a href="productos.html" class="nav-link active">Productos</a></li>
+                <li><a href="ocasiones.html" class="nav-link">Ocasiones</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menú Hamburguesa -->
+        <div class="hamburger-dropdown" id="hamburger-menu">
+            <ul class="hamburger-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fa-solid fa-cake-candles"></i> Productos</a></li>
+                <li><a href="ocasiones.html"><i class="fa-solid fa-gift"></i> Ocasiones</a></li>
+                <li><a href="nosotros.html"><i class="fa-solid fa-heart"></i> Nosotros</a></li>
+                <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Card de Búsqueda -->
+        <div class="search-card-dropdown" id="search-card">
+            <div class="search-card-header">
+                <h3>Buscar</h3>
+                <button class="close-btn" id="close-search"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="¿Qué antojo estás buscando hoy?">
+            </div>
+            <div class="search-section">
+                <h4>Búsquedas populares</h4>
+                <div class="trending-pills">
+                    <a href="ocasiones.html" class="pill">cumpleaños</a>
+                    <a href="productos.html" class="pill">brownies</a>
+                    <a href="productos.html" class="pill">selva negra</a>
+                    <a href="productos.html" class="pill">tortas</a>
+                    <a href="index.html" class="pill">galletas</a>
+                    <a href="productos.html" class="pill">queques</a>
+                </div>
+            </div>
+            <div class="search-section">
+                <h4>Comprar por categoría</h4>
+                <ul class="category-search-list">
+                    <li><a href="ocasiones.html">Regalos de Cumpleaños</a></li>
+                    <li><a href="productos.html">Tortas Personalizadas</a></li>
+                    <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card del Carrito -->
+        <div class="cart-card-dropdown" id="cart-card">
+            <div class="cart-card-header">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h3>
+                <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items-container" id="cart-items"></div>
+            <div class="cart-card-footer">
+                <div class="cart-total">
+                    <span>Total estimado:</span>
+                    <strong id="cart-total-price">Bs. 0</strong>
+                </div>
+                <a href="contacto.html" class="btn-primary full-width">Finalizar pedido por WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         SECCIONES DE PRODUCTOS (Captura 2)
+         ================================================================= -->
+    <main>
+        <!-- 1. TORTAS (Fondo claro) -->
+        <section class="catalog-band band-light">
+            <div class="catalog-container">
+                <div class="catalog-info">
+                    <h2>TORTAS</h2>
+                    <p>Endulza tus momentos especiales con nuestras deliciosas tortas, elaboradas para compartir, celebrar y crear recuerdos inolvidables.</p>
+                    <button class="btn-outline add-to-cart-btn" data-name="Torta Clásica" data-price="90">
+                        Agregar Torta al carrito (Bs. 90)
+                    </button>
+                </div>
+                <div class="catalog-cards">
+                    <!-- =====================================================
+                         IMAGEN DE CARD TORTAS 1:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-red">
+                        <!-- <img src="images/torta-1.jpg" alt="Torta de chocolate"> -->
+                    </div>
+
+                    <!-- =====================================================
+                         IMAGEN DE CARD TORTAS 2:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-red">
+                        <!-- <img src="images/torta-2.jpg" alt="Torta especial"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TORTAS PERSONALIZADAS (Fondo guindo/rojo oscuro) -->
+        <section class="catalog-band band-dark">
+            <div class="catalog-container">
+                <div class="catalog-info">
+                    <h2>TORTAS<br>PERSONALIZADAS</h2>
+                    <p>¡Tu idea hecha torta! Diseñamos deliciosas creaciones a tu gusto, con decoraciones y detalles únicos para celebrar tus momentos más especiales.</p>
+                    <button class="btn-outline-light add-to-cart-btn" data-name="Torta Personalizada" data-price="130">
+                        Reservar Personalizada (Bs. 130)
+                    </button>
+                </div>
+                <div class="catalog-cards">
+                    <!-- =====================================================
+                         IMAGEN DE CARD TORTAS PERSONALIZADAS 1:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/torta-personalizada-1.jpg" alt="Torta personalizada 1"> -->
+                    </div>
+
+                    <!-- =====================================================
+                         IMAGEN DE CARD TORTAS PERSONALIZADAS 2:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/torta-personalizada-2.jpg" alt="Torta personalizada 2"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. QUEQUES (Fondo claro) -->
+        <section class="catalog-band band-light">
+            <div class="catalog-container">
+                <div class="catalog-info">
+                    <h2>QUEQUES</h2>
+                    <p>Disfruta de nuestros deliciosos queques, suaves, esponjosos y llenos de sabor. Perfectos para acompañar tus tardes, compartir en familia o darte un dulce gustito.</p>
+                    <button class="btn-outline add-to-cart-btn" data-name="Queque Artesanal" data-price="35">
+                        Agregar Queque al carrito (Bs. 35)
+                    </button>
+                </div>
+                <div class="catalog-cards">
+                    <!-- =====================================================
+                         IMAGEN DE CARD QUEQUES 1:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-red">
+                        <!-- <img src="images/queque-1.jpg" alt="Queque casero 1"> -->
+                    </div>
+
+                    <!-- =====================================================
+                         IMAGEN DE CARD QUEQUES 2:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-red">
+                        <!-- <img src="images/queque-2.jpg" alt="Queque casero 2"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BROWNIES (Fondo guindo/rojo oscuro) -->
+        <section class="catalog-band band-dark">
+            <div class="catalog-container">
+                <div class="catalog-info">
+                    <h2>BROWNIES</h2>
+                    <p>Déjate conquistar por nuestros irresistibles brownies, con una textura suave, un intenso sabor a chocolate y ese toque dulce que convierte cada bocado en un momento especial.</p>
+                    <button class="btn-outline-light add-to-cart-btn" data-name="Pack de Brownies" data-price="40">
+                        Agregar Pack Brownies (Bs. 40)
+                    </button>
+                </div>
+                <div class="catalog-cards">
+                    <!-- =====================================================
+                         IMAGEN DE CARD BROWNIES 1:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/brownie-1.jpg" alt="Brownies de chocolate 1"> -->
+                    </div>
+
+                    <!-- =====================================================
+                         IMAGEN DE CARD BROWNIES 2:
+                         Descomenta <img> y coloca el nombre de tu imagen
+                         ===================================================== -->
+                    <div class="square-card border-white">
+                        <!-- <img src="images/brownie-2.jpg" alt="Brownies de chocolate 2"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Usuario -->
+    <div class="modal-overlay" id="user-modal">
+        <div class="user-modal-card">
+            <button class="close-btn modal-close" id="close-user-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                <button class="tab-btn" data-tab="register">Registrarse</button>
+            </div>
+            <form class="auth-form active" id="form-login">
+                <h3>¡Bienvenido de nuevo!</h3>
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Contraseña</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Ingresar</button>
+            </form>
+            <form class="auth-form" id="form-register">
+                <h3>Crea tu cuenta dulce</h3>
+                <div class="form-group">
+                    <label for="reg-name">Nombre completo</label>
+                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Teléfono / WhatsApp</label>
+                    <input type="tel" id="reg-phone" placeholder="+591 68081109" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>INFORMACION</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Preguntas frecuentes</a></li>
+                    <li><a href="contacto.html">Políticas de compra</a></li>
+                    <li><a href="contacto.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIALES</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+            <a href="#" class="footer-arrow" title="Volver arriba"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
