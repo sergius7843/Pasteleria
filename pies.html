@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies Pastelería | Pies & Cheesecakes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- =================================================================
+         TOP / ENCABEZADO FIJO
+         ================================================================= -->
+    <header class="site-header">
+        <div class="top-utility-bar">
+            <div class="utility-left">
+                <button class="icon-btn" id="btn-hamburger" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="contacto.html#sucursales" class="icon-btn" title="Ver nuestras sucursales">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand-logo">
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img">
+            </a>
+
+            <div class="utility-right">
+                <button class="icon-btn" id="btn-search" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn" id="btn-user" aria-label="Iniciar sesión o registrarse">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="btn-cart" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="productos.html" class="nav-link active">Productos</a></li>
+                <li><a href="ocasiones.html" class="nav-link">Ocasiones</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Carrusel pequeño de palabras siempre en movimiento -->
+        <div class="word-ticker">
+            <div class="word-ticker-track">
+                <div class="ticker-group">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+                <div class="ticker-group" aria-hidden="true">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Hamburguesa -->
+        <div class="hamburger-dropdown" id="hamburger-menu">
+            <ul class="hamburger-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fa-solid fa-cake-candles"></i> Productos</a></li>
+                <li><a href="ocasiones.html"><i class="fa-solid fa-gift"></i> Ocasiones</a></li>
+                <li><a href="nosotros.html"><i class="fa-solid fa-heart"></i> Nosotros</a></li>
+                <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Card de Búsqueda -->
+        <div class="search-card-dropdown" id="search-card">
+            <div class="search-card-header">
+                <h3>Buscar</h3>
+                <button class="close-btn" id="close-search"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="¿Qué antojo estás buscando hoy?">
+            </div>
+            <div class="search-section">
+                <h4>Búsquedas populares</h4>
+                <div class="trending-pills">
+                    <a href="ocasiones.html" class="pill">cumpleaños</a>
+                    <a href="productos.html#sec-brownies" class="pill">brownies</a>
+                    <a href="tortas.html" class="pill">selva negra</a>
+                    <a href="pies.html" class="pill">pie de limón</a>
+                    <a href="pies.html" class="pill">cheesecake</a>
+                    <a href="masitas.html" class="pill">masitas dulces</a>
+                    <a href="productos.html#sec-queques" class="pill">queques</a>
+                </div>
+            </div>
+            <div class="search-section">
+                <h4>Comprar por categoría</h4>
+                <ul class="category-search-list">
+                    <li><a href="ocasiones.html">Regalos y Ocasiones</a></li>
+                    <li><a href="tortas.html">Tortas Clásicas</a></li>
+                    <li><a href="personalizadas.html">Tortas Personalizadas</a></li>
+                    <li><a href="masitas.html">Masitas y Bocaditos</a></li>
+                    <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card del Carrito -->
+        <div class="cart-card-dropdown" id="cart-card">
+            <div class="cart-card-header">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h3>
+                <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items-container" id="cart-items"></div>
+            <div class="cart-card-footer">
+                <div class="cart-total">
+                    <span>Total estimado:</span>
+                    <strong id="cart-total-price">Bs. 0</strong>
+                </div>
+                <a href="https://wa.me/59168081109" target="_blank" rel="noopener" class="btn-primary full-width checkout-whatsapp-btn">Finalizar pedido por WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         CONTENIDO: PIES & CHEESECAKES
+         ================================================================= -->
+    <main>
+        <!-- Breadcrumb Bar -->
+        <div class="breadcrumb-bar">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+            <span>/</span>
+            <a href="productos.html">Productos</a>
+            <span>/</span>
+            <strong>Pies & Cheesecakes</strong>
+        </div>
+
+        <!-- Hero de Categoría -->
+        <section class="category-page-hero">
+            <span class="prod-badge-light">Frescura & Suavidad</span>
+            <h1>PIES & CHEESECAKES ARTESANALES</h1>
+            <p>Bases crocantes de masa sableé recién horneada, rellenos sedosos de frutas naturales y cremas ligeras con el balance exacto entre dulzura y acidez.</p>
+            <a href="productos.html" class="back-to-products"><i class="fa-solid fa-arrow-left"></i> Volver a Explorar Menú</a>
+        </section>
+
+        <!-- Catálogo de Pies -->
+        <section class="dedicated-catalog-grid">
+            <!-- Pie de Limón Artesanal -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card">
+                    <img src="images/tortas/Pai.webp" alt="Pie de Limón Artesanal con Merengue Tostado">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Pie de Limón Flameado</strong>
+                    <span>Bs. 65</span>
+                </div>
+                <button class="btn-cart-sm add-to-cart-btn" data-name="Pie de Limón Flameado" data-price="65">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                </button>
+            </div>
+
+            <!-- Cheesecake de Maracuyá -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-1">
+                    <img src="images/tortas/Pai2.webp" alt="Cheesecake Suave de Maracuyá">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Cheesecake de Maracuyá</strong>
+                    <span>Bs. 75</span>
+                </div>
+                <button class="btn-cart-sm add-to-cart-btn" data-name="Cheesecake de Maracuyá" data-price="75">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                </button>
+            </div>
+
+            <!-- Torta Primavera Frutilla -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/tortas/pai3.jpg" alt="Tarta Primavera Frutillas y Crema">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Tarta Primavera Frutilla</strong>
+                    <span>Bs. 90</span>
+                </div>
+                <button class="btn-cart-sm add-to-cart-btn" data-name="Tarta Primavera Frutilla" data-price="90">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                </button>
+            </div>
+
+            <!-- Porción Pie de Limón -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-3">
+                    <img src="images/tortas/Pai.webp" alt="Porción Individual Pie de Limón">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Porción Pie de Limón</strong>
+                    <span>Bs. 15</span>
+                </div>
+                <button class="btn-cart-sm add-to-cart-btn" data-name="Porción Pie de Limón" data-price="15">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Usuario -->
+    <div class="modal-overlay" id="user-modal">
+        <div class="user-modal-card">
+            <button class="close-btn modal-close" id="close-user-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                <button class="tab-btn" data-tab="register">Registrarse</button>
+            </div>
+            <form class="auth-form active" id="form-login">
+                <h3>¡Bienvenido de nuevo!</h3>
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Contraseña</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Ingresar</button>
+            </form>
+            <form class="auth-form" id="form-register">
+                <h3>Crea tu cuenta dulce</h3>
+                <div class="form-group">
+                    <label for="reg-name">Nombre completo</label>
+                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Teléfono / WhatsApp</label>
+                    <input type="tel" id="reg-phone" placeholder="+591 68081109" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>INFORMACION</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Preguntas frecuentes</a></li>
+                    <li><a href="contacto.html">Políticas de compra</a></li>
+                    <li><a href="contacto.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIALES</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+            <a href="#" class="footer-arrow" title="Volver arriba"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

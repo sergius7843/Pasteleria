@@ -58,10 +58,32 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const term = searchInput.value.trim().toLowerCase();
-                if (term.includes('cumple') || term.includes('regalo') || term.includes('amor')) {
-                    window.location.href = 'ocasiones.html';
-                } else if (term.includes('ubicacion') || term.includes('sucursal') || term.includes('whatsapp')) {
+                if (term.includes('temporada') || term.includes('navidad') || term.includes('rosca') || term.includes('jengibre') || term.includes('halloween')) {
+                    window.location.href = 'index.html';
+                } else if (term.includes('cumple') || term.includes('barbie') || term.includes('paw')) {
+                    window.location.href = 'ocasiones.html#sec-cumpleanios';
+                } else if (term.includes('amor') || term.includes('amistad') || term.includes('pareja')) {
+                    window.location.href = 'ocasiones.html#sec-amor';
+                } else if (term.includes('evento') || term.includes('reunion') || term.includes('boda') || term.includes('shower') || term.includes('15')) {
+                    window.location.href = 'ocasiones.html#sec-eventos';
+                } else if (term.includes('regalo') || term.includes('caja') || term.includes('box')) {
+                    window.location.href = 'ocasiones.html#sec-regalos';
+                } else if (term.includes('ubicacion') || term.includes('sucursal') || term.includes('whatsapp') || term.includes('telefono')) {
                     window.location.href = 'contacto.html';
+                } else if (term.includes('nosotros') || term.includes('historia')) {
+                    window.location.href = 'nosotros.html';
+                } else if (term.includes('pie') || term.includes('cheesecake') || term.includes('limon')) {
+                    window.location.href = 'pies.html';
+                } else if (term.includes('masita') || term.includes('alfajor') || term.includes('dona') || term.includes('medialuna') || term.includes('bocadito')) {
+                    window.location.href = 'masitas.html';
+                } else if (term.includes('personaliz') || term.includes('mario') || term.includes('capibara') || term.includes('kuromi') || term.includes('tematica')) {
+                    window.location.href = 'personalizadas.html';
+                } else if (term.includes('torta') || term.includes('selva') || term.includes('moca') || term.includes('fudge') || term.includes('vaso')) {
+                    window.location.href = 'tortas.html';
+                } else if (term.includes('brownie')) {
+                    window.location.href = 'productos.html#sec-brownies';
+                } else if (term.includes('queque')) {
+                    window.location.href = 'productos.html#sec-queques';
                 } else {
                     window.location.href = 'productos.html';
                 }
@@ -260,6 +282,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         cartTotalPriceEl.textContent = `Bs. ${totalBs}`;
+
+        // Actualizar botón de checkout por WhatsApp con el pedido detallado
+        const checkoutBtns = document.querySelectorAll('.checkout-whatsapp-btn');
+        if (checkoutBtns.length > 0) {
+            if (cart.length === 0) {
+                checkoutBtns.forEach(btn => {
+                    btn.href = 'https://wa.me/59168081109?text=Hola%20Brownies%20Pasteler%C3%ADa!%20Quisiera%20consultar%20sobre%20sus%20productos.';
+                    btn.target = '_blank';
+                    btn.rel = 'noopener';
+                });
+            } else {
+                let msg = '¡Hola Brownies Pastelería! Quisiera realizar el siguiente pedido:\n\n';
+                cart.forEach(item => {
+                    msg += `• ${item.qty}x ${item.name} - Bs. ${item.price * item.qty}\n`;
+                });
+                msg += `\n*Total estimado: Bs. ${totalBs}*\n\n¿Me confirman disponibilidad y tiempo de entrega? ¡Muchas gracias!`;
+                checkoutBtns.forEach(btn => {
+                    btn.href = `https://wa.me/59168081109?text=${encodeURIComponent(msg)}`;
+                    btn.target = '_blank';
+                    btn.rel = 'noopener';
+                });
+            }
+        }
 
         // Botones para quitar artículos del carrito
         document.querySelectorAll('.cart-item-remove').forEach(btn => {

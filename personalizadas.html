@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies Pastelería | Tortas Personalizadas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- =================================================================
+         TOP / ENCABEZADO FIJO
+         ================================================================= -->
+    <header class="site-header">
+        <div class="top-utility-bar">
+            <div class="utility-left">
+                <button class="icon-btn" id="btn-hamburger" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="contacto.html#sucursales" class="icon-btn" title="Ver nuestras sucursales">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand-logo">
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img">
+            </a>
+
+            <div class="utility-right">
+                <button class="icon-btn" id="btn-search" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn" id="btn-user" aria-label="Iniciar sesión o registrarse">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="btn-cart" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="productos.html" class="nav-link active">Productos</a></li>
+                <li><a href="ocasiones.html" class="nav-link">Ocasiones</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Carrusel pequeño de palabras siempre en movimiento -->
+        <div class="word-ticker">
+            <div class="word-ticker-track">
+                <div class="ticker-group">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+                <div class="ticker-group" aria-hidden="true">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Hamburguesa -->
+        <div class="hamburger-dropdown" id="hamburger-menu">
+            <ul class="hamburger-list">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fa-solid fa-cake-candles"></i> Productos</a></li>
+                <li><a href="ocasiones.html"><i class="fa-solid fa-gift"></i> Ocasiones</a></li>
+                <li><a href="nosotros.html"><i class="fa-solid fa-heart"></i> Nosotros</a></li>
+                <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Card de Búsqueda -->
+        <div class="search-card-dropdown" id="search-card">
+            <div class="search-card-header">
+                <h3>Buscar</h3>
+                <button class="close-btn" id="close-search"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="¿Qué antojo estás buscando hoy?">
+            </div>
+            <div class="search-section">
+                <h4>Búsquedas populares</h4>
+                <div class="trending-pills">
+                    <a href="ocasiones.html" class="pill">cumpleaños</a>
+                    <a href="productos.html#sec-brownies" class="pill">brownies</a>
+                    <a href="tortas.html" class="pill">selva negra</a>
+                    <a href="pies.html" class="pill">pie de limón</a>
+                    <a href="personalizadas.html" class="pill">mario bros</a>
+                    <a href="personalizadas.html" class="pill">capibara</a>
+                    <a href="masitas.html" class="pill">masitas dulces</a>
+                </div>
+            </div>
+            <div class="search-section">
+                <h4>Comprar por categoría</h4>
+                <ul class="category-search-list">
+                    <li><a href="ocasiones.html">Regalos y Ocasiones</a></li>
+                    <li><a href="tortas.html">Tortas Clásicas</a></li>
+                    <li><a href="pies.html">Pies y Tartas</a></li>
+                    <li><a href="masitas.html">Masitas y Bocaditos</a></li>
+                    <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card del Carrito -->
+        <div class="cart-card-dropdown" id="cart-card">
+            <div class="cart-card-header">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h3>
+                <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items-container" id="cart-items"></div>
+            <div class="cart-card-footer">
+                <div class="cart-total">
+                    <span>Total estimado:</span>
+                    <strong id="cart-total-price">Bs. 0</strong>
+                </div>
+                <a href="https://wa.me/59168081109" target="_blank" rel="noopener" class="btn-primary full-width checkout-whatsapp-btn">Finalizar pedido por WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         CONTENIDO: TORTAS PERSONALIZADAS
+         ================================================================= -->
+    <main>
+        <!-- Breadcrumb Bar -->
+        <div class="breadcrumb-bar">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+            <span>/</span>
+            <a href="productos.html">Productos</a>
+            <span>/</span>
+            <strong>Tortas Personalizadas</strong>
+        </div>
+
+        <!-- Hero de Categoría -->
+        <section class="category-page-hero">
+            <span class="prod-badge-light">Atelier de Creación Exclusiva</span>
+            <h1>TORTAS PERSONALIZADAS & TEMÁTICAS</h1>
+            <p>Diseñamos la torta de tus sueños para cumpleaños, infantiles, temáticas anime, caricaturas o aniversarios. Modelado fino en fondant, buttercream sedoso y acabados en 3D.</p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies%20Pasteler%C3%ADa!%20Quiero%20cotizar%20una%20torta%20personalizada" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar Torta por WhatsApp
+                </a>
+                <a href="productos.html" class="back-to-products" style="margin-top:0;"><i class="fa-solid fa-arrow-left"></i> Volver a Explorar Menú</a>
+            </div>
+        </section>
+
+        <!-- Pasos para tu pedido personalizado -->
+        <section style="max-width: 1000px; margin: 0 auto 2.5rem; padding: 1.5rem 1rem; background: var(--bg-white); border-radius: 12px; box-shadow: var(--shadow-soft);">
+            <h3 style="font-family: var(--font-handwriting); color: var(--brand-red); font-size: 2rem; text-align: center; margin-bottom: 1.5rem;">¿Cómo pedir tu torta a medida?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
+                <div>
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-cream); color: var(--brand-red); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-weight: 700; font-size: 1.25rem;">1</div>
+                    <strong style="display:block; margin-bottom:0.3rem;">Elige tu diseño</strong>
+                    <p style="font-size:0.85rem; color:#666; margin:0;">Elige de nuestra galería o envíanos tu foto de referencia favorita.</p>
+                </div>
+                <div>
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-cream); color: var(--brand-red); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-weight: 700; font-size: 1.25rem;">2</div>
+                    <strong style="display:block; margin-bottom:0.3rem;">Bizcocho y Relleno</strong>
+                    <p style="font-size:0.85rem; color:#666; margin:0;">Elige sabor de bizcochuelo y doble relleno (manjar, chocolate, frutos rojos, crema).</p>
+                </div>
+                <div>
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-cream); color: var(--brand-red); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-weight: 700; font-size: 1.25rem;">3</div>
+                    <strong style="display:block; margin-bottom:0.3rem;">Porciones y Fecha</strong>
+                    <p style="font-size:0.85rem; color:#666; margin:0;">Indícanos la cantidad de invitados y la fecha de tu evento (mínimo 48h antes).</p>
+                </div>
+                <div>
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-cream); color: var(--brand-red); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-weight: 700; font-size: 1.25rem;">4</div>
+                    <strong style="display:block; margin-bottom:0.3rem;">¡Listo para celebrar!</strong>
+                    <p style="font-size:0.85rem; color:#666; margin:0;">Recógela en sucursal o solicita entrega a domicilio coordinada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo de Diseños Realizados -->
+        <section class="dedicated-catalog-grid">
+            <!-- Mario Bros 3D -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card">
+                    <img src="images/tortas_personalizadas/torta_personalizada2.webp" alt="Torta Temática Mario Bros 3D en Fondant">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Torta Mario Bros 3D</strong>
+                    <span>Desde Bs. 220</span>
+                </div>
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies!%20Deseo%20cotizar%20la%20Torta%20Mario%20Bros%203D" target="_blank" rel="noopener" class="btn-cart-sm" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+
+            <!-- Capibaras en Laguna -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-1">
+                    <img src="images/tortas_personalizadas/torta_personalizada3.webp" alt="Torta Temática Familia de Capibaras en Laguna">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Torta Capibaras en Laguna</strong>
+                    <span>Desde Bs. 200</span>
+                </div>
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies!%20Deseo%20cotizar%20la%20Torta%20Capibaras%20en%20Laguna" target="_blank" rel="noopener" class="btn-cart-sm" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+
+            <!-- Kuromi Pastel -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/tortas_personalizadas/torta_personalizada6.webp" alt="Torta Sanrio Kuromi en Tonos Lila y Rosa">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Torta Sanrio Kuromi Pastel</strong>
+                    <span>Desde Bs. 190</span>
+                </div>
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies!%20Deseo%20cotizar%20la%20Torta%20Kuromi%20Pastel" target="_blank" rel="noopener" class="btn-cart-sm" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+
+            <!-- Happy Birthday Oreo Cuadrada -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-3">
+                    <img src="images/tortas_personalizadas/torta_personalizada1.webp" alt="Torta Cuadrada Happy Birthday con Mini Oreos">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Torta Cuadrada HB Oreo</strong>
+                    <span>Desde Bs. 160</span>
+                </div>
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies!%20Deseo%20cotizar%20la%20Torta%20Cuadrada%20HB%20Oreo" target="_blank" rel="noopener" class="btn-cart-sm" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+
+            <!-- Gomitas & Chocolates Candy -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-1">
+                    <img src="images/tortas_personalizadas/torta_personalizada4.webp" alt="Torta Infantil Candy Explosion con Gomitas y Chocolates">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Torta Candy Explosion</strong>
+                    <span>Desde Bs. 180</span>
+                </div>
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies!%20Deseo%20cotizar%20la%20Torta%20Candy%20Explosion" target="_blank" rel="noopener" class="btn-cart-sm" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+
+            <!-- Pop Art / Anime Historieta -->
+            <div class="product-card-unit">
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/tortas_personalizadas/torta_personalizada5.webp" alt="Torta Temática Pop Art y Anime">
+                </div>
+                <div class="card-mini-caption">
+                    <strong>Torta Pop Art & Anime</strong>
+                    <span>Desde Bs. 200</span>
+                </div>
+                <a href="https://wa.me/59168081109?text=Hola%20Brownies!%20Deseo%20cotizar%20la%20Torta%20Pop%20Art%20Anime" target="_blank" rel="noopener" class="btn-cart-sm" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Usuario -->
+    <div class="modal-overlay" id="user-modal">
+        <div class="user-modal-card">
+            <button class="close-btn modal-close" id="close-user-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                <button class="tab-btn" data-tab="register">Registrarse</button>
+            </div>
+            <form class="auth-form active" id="form-login">
+                <h3>¡Bienvenido de nuevo!</h3>
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Contraseña</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Ingresar</button>
+            </form>
+            <form class="auth-form" id="form-register">
+                <h3>Crea tu cuenta dulce</h3>
+                <div class="form-group">
+                    <label for="reg-name">Nombre completo</label>
+                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Teléfono / WhatsApp</label>
+                    <input type="tel" id="reg-phone" placeholder="+591 68081109" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>INFORMACION</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Preguntas frecuentes</a></li>
+                    <li><a href="contacto.html">Políticas de compra</a></li>
+                    <li><a href="contacto.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIALES</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+            <a href="#" class="footer-arrow" title="Volver arriba"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

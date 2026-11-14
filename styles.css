@@ -41,7 +41,6 @@ main {
     width: 100%;
 }
 
-/* Tipografía cursiva para títulos de Nosotros y Marca */
 .script-heading {
     font-family: 'Lobster Two', cursive;
     font-style: italic;
@@ -64,7 +63,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 4%;
+    padding: 8px 4%;
     background-color: var(--bg-white);
     border-top: 2px solid var(--brand-red);
     border-bottom: 2px solid var(--brand-red);
@@ -120,49 +119,25 @@ main {
     justify-content: center;
 }
 
-/* Logotipo en el medio del Top */
+/* Logotipo en el medio del Top (Solo imagen logotipo.png) */
 .brand-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     text-decoration: none;
-    color: var(--brand-brown);
     flex-shrink: 0;
 }
 
 .logo-img {
-    height: 44px;
+    height: 52px;
     width: auto;
     object-fit: contain;
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1;
-}
-
-.brand-main {
-    font-family: 'Lobster Two', cursive;
-    font-style: italic;
-    font-size: 1.85rem;
-    color: var(--brand-brown);
-}
-
-.brand-sub {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    color: var(--brand-brown);
-    margin-top: 2px;
+    display: block;
 }
 
 /* Barra de pestañas de navegación */
 .main-nav {
-    padding: 12px 4%;
+    padding: 10px 4%;
     background-color: var(--bg-cream);
 }
 
@@ -180,8 +155,8 @@ main {
     text-decoration: none;
     color: var(--brand-red);
     font-weight: 600;
-    font-size: 1.05rem;
-    padding: 6px 20px;
+    font-size: 1.02rem;
+    padding: 5px 20px;
     border: 3px solid transparent;
     transition: var(--transition);
     display: inline-block;
@@ -193,10 +168,94 @@ main {
     color: var(--brand-red-hover);
 }
 
-/* Estado remarcado de la página activa */
 .nav-link.active {
     border: 3px solid var(--brand-red);
     background-color: var(--bg-white);
+}
+
+/* ==========================================================================
+   CARRUSEL PEQUEÑO DE PALABRAS EN MOVIMIENTO CONTINUO (DEBAJO DEL NAVBAR)
+   ========================================================================== */
+.word-ticker {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.word-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: tickerMove 28s linear infinite;
+}
+
+/* Si el usuario pasa el mouse por encima, se pausa suavemente para leer */
+.word-ticker:hover .word-ticker-track {
+    animation-play-state: paused;
+}
+
+.ticker-group {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding-right: 48px;
+}
+
+.ticker-group span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticker-group i {
+    color: var(--card-placeholder);
+    font-size: 0.85rem;
+}
+
+@keyframes tickerMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   ANIMACIÓN RELAJANTE DE FLOTACIÓN PARA LAS CARDS DE FOTOS
+   ========================================================================== */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+        box-shadow: 0 6px 16px rgba(128, 0, 0, 0.10);
+    }
+    50% {
+        transform: translateY(-9px);
+        box-shadow: 0 16px 28px rgba(128, 0, 0, 0.18);
+    }
+}
+
+.floating-card {
+    animation: gentleFloat 4.5s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Desfases para que las cards floten con ritmo natural y orgánico */
+.float-delay-1 {
+    animation-delay: 0s;
+}
+
+.float-delay-2 {
+    animation-delay: 1.5s;
+}
+
+.float-delay-3 {
+    animation-delay: 3s;
 }
 
 /* ==========================================================================
@@ -239,7 +298,6 @@ main {
     background-color: var(--bg-cream);
 }
 
-/* Card de Búsqueda (Imagen 6) */
 .search-card-dropdown {
     position: absolute;
     top: 66px;
@@ -351,7 +409,6 @@ main {
     font-size: 0.9rem;
 }
 
-/* Card del Carrito de Compras */
 .cart-card-dropdown {
     position: absolute;
     top: 66px;
@@ -407,8 +464,8 @@ main {
    TARJETAS CUADRADAS ELÁSTICAS (CARDS DE PRODUCTOS) Y BOTONES
    ========================================================================== */
 .square-card {
-    width: 250px;
-    aspect-ratio: 1 / 1; /* Mantiene siempre el formato cuadrado en cualquier pantalla */
+    width: 240px;
+    aspect-ratio: 1 / 1;
     background-color: var(--card-placeholder);
     position: relative;
     overflow: hidden;
@@ -417,11 +474,6 @@ main {
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex-shrink: 0;
-}
-
-.square-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-soft);
 }
 
 .square-card.border-red {
@@ -433,7 +485,7 @@ main {
 }
 
 .square-card.framed-white {
-    box-shadow: 0 0 0 8px var(--bg-white);
+    box-shadow: 0 0 0 6px var(--bg-white);
 }
 
 .square-card img {
@@ -441,14 +493,6 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-.card-placeholder-hint {
-    font-size: 0.8rem;
-    color: rgba(128, 0, 0, 0.65);
-    text-align: center;
-    font-weight: 600;
-    padding: 12px;
 }
 
 /* Botones reutilizables */
@@ -496,12 +540,12 @@ main {
     background-color: transparent;
     color: var(--bg-white);
     border: 2px solid var(--bg-white);
-    padding: 9px 18px;
+    padding: 9px 20px;
     border-radius: 22px;
     font-weight: 600;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    margin-top: 14px;
+    margin-top: 12px;
     transition: var(--transition);
 }
 
@@ -520,7 +564,7 @@ main {
 .carousel-section {
     position: relative;
     max-width: 1060px;
-    margin: 20px auto 40px;
+    margin: 24px auto 40px;
     padding: 20px 60px;
 }
 
@@ -565,10 +609,11 @@ main {
 .slide-media {
     display: flex;
     justify-content: center;
+    padding: 12px 0;
 }
 
 .slide-media .square-card {
-    width: 300px;
+    width: 290px;
 }
 
 .carousel-arrow {
@@ -610,7 +655,7 @@ main {
 /* Productos Más Vendidos */
 .best-sellers-section {
     background-color: var(--brand-red);
-    padding: 44px 4% 54px;
+    padding: 48px 4% 56px;
     text-align: center;
 }
 
@@ -618,14 +663,14 @@ main {
     color: var(--bg-white);
     font-size: 1.5rem;
     font-weight: 800;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
     letter-spacing: 0.5px;
 }
 
 .best-sellers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 30px;
     max-width: 920px;
     margin: 0 auto;
     justify-items: center;
@@ -635,7 +680,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     width: 100%;
     max-width: 260px;
 }
@@ -698,23 +743,715 @@ main {
 }
 
 /* ==========================================================================
-   PÁGINAS 2 Y 3: PRODUCTOS Y OCASIONES
+   PÁGINA 2 REDISEÑADA: PRODUCTOS (ESTRUCTURA DINÁMICA Y EDITORIAL)
    ========================================================================== */
-.catalog-band {
-    padding: 48px 4%;
+.products-page {
+    padding-bottom: 40px;
 }
 
-.band-light {
+/* Barra de salto rápido por categorías */
+.category-quick-nav {
+    max-width: 1040px;
+    margin: 22px auto 10px;
+    padding: 12px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.quick-nav-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--brand-red);
+}
+
+.quick-nav-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cat-chip {
+    text-decoration: none;
+    background-color: var(--bg-white);
+    color: var(--brand-red);
+    border: 2px solid var(--brand-red);
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cat-chip:hover {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   TARJETAS DE EXPLORACIÓN DE CATEGORÍAS (EN productos.html)
+   ========================================================================== */
+.category-explorer-section {
+    max-width: 1080px;
+    margin: 10px auto 46px;
+    padding: 0 4%;
+}
+
+.category-explorer-header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.category-explorer-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--brand-red);
+    margin-bottom: 6px;
+}
+
+.category-explorer-header p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.category-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.category-nav-card {
+    background-color: var(--bg-white);
+    border: 2px solid var(--brand-red);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.category-nav-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(128, 0, 0, 0.18);
+    border-color: var(--brand-red-hover);
+}
+
+.category-nav-card-img-wrapper {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--card-placeholder);
+    position: relative;
+}
+
+.category-nav-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-nav-card:hover .category-nav-card-img-wrapper img {
+    transform: scale(1.06);
+}
+
+.category-nav-card-body {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.category-nav-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--brand-red);
+    margin-bottom: 6px;
+}
+
+.category-nav-card-desc {
+    font-size: 0.84rem;
+    opacity: 0.85;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+
+.category-nav-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 0.86rem;
+    transition: gap 0.2s ease;
+}
+
+.category-nav-card:hover .category-nav-card-cta {
+    gap: 10px;
+    color: var(--brand-red-hover);
+}
+
+/* ==========================================================================
+   BREADCRUMB & HERO DE PÁGINAS DEDICADAS DE CATEGORÍA
+   ========================================================================== */
+.breadcrumb-bar {
+    max-width: 1080px;
+    margin: 18px auto 0;
+    padding: 0 4%;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-red);
+}
+
+.breadcrumb-bar a {
+    color: var(--brand-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.breadcrumb-bar a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-bar span {
+    opacity: 0.6;
+}
+
+.category-page-hero {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    border-radius: 16px;
+    padding: 34px 5%;
+    margin: 14px auto 38px;
+    max-width: 1080px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.category-page-hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.category-page-hero p {
+    font-size: 0.94rem;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+.category-page-hero .back-to-products {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.category-page-hero .back-to-products:hover {
+    background-color: var(--bg-white);
+    color: var(--brand-red);
+}
+
+.dedicated-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1080px;
+    margin: 0 auto 50px;
+    padding: 0 4%;
+    justify-items: center;
+}
+
+/* Insignias de categoría */
+.prod-badge {
+    display: inline-block;
+    background-color: rgba(128, 0, 0, 0.1);
+    color: var(--brand-red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.prod-badge-light {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: var(--bg-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+/* 1. Tortas: Tarjeta Editorial con Galería Escalonada */
+.prod-showcase-Editorial {
+    max-width: 1080px;
+    margin: 20px auto 50px;
+    padding: 0 4%;
+}
+
+.editorial-card-container {
+    background-color: var(--bg-white);
+    border: 2px solid var(--brand-red);
+    border-radius: 16px;
+    padding: 42px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.editorial-info {
+    flex: 1;
+    max-width: 400px;
+}
+
+.editorial-info h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.editorial-info p {
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+}
+
+.prod-highlights {
+    list-style: none;
+    margin-bottom: 22px;
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.prod-highlights li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.editorial-gallery.staggered {
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+}
+
+.tortas-extra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 26px;
+    justify-items: center;
+    width: 100%;
+    margin-top: 36px;
+}
+
+.product-card-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-card-unit.offset-down {
+    margin-top: 32px;
+}
+
+.card-mini-caption {
     background-color: var(--bg-cream);
+    border: 1.5px solid var(--brand-red);
+    border-radius: 8px;
+    padding: 6px 12px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--brand-red);
+}
+
+/* 2. Tortas Personalizadas: Contenedor Atelier Redondeado */
+.prod-atelier-wrapper {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    padding: 0 4%;
+}
+
+.atelier-dark-box {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    border-radius: 20px;
+    padding: 48px 5%;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(128, 0, 0, 0.22);
+    position: relative;
+}
+
+.atelier-header {
+    max-width: 640px;
+    margin: 0 auto 24px;
+}
+
+.atelier-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.atelier-header p {
+    font-size: 0.94rem;
+    opacity: 0.95;
+}
+
+.atelier-steps {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+}
+
+.step-pill {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-pill span {
+    background-color: var(--bg-white);
+    color: var(--brand-red);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.75rem;
+}
+
+.atelier-cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.atelier-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.atelier-caption {
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+/* 3. Queques: Sección Zig-Zag Invertida */
+.prod-zigzag-section {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    padding: 0 4%;
+}
+
+.zigzag-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 44px;
+}
+
+.zigzag-gallery {
+    display: flex;
+    gap: 24px;
+}
+
+.zigzag-text-box {
+    flex: 1;
+    background-color: var(--bg-white);
+    border-left: 6px solid var(--brand-red);
+    padding: 32px;
+    border-radius: 0 14px 14px 0;
+    box-shadow: var(--shadow-soft);
+}
+
+.zigzag-text-box h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.zigzag-text-box p {
+    font-size: 0.92rem;
+}
+
+/* 4. Brownies: Bento Bicolor de Especialidad */
+.prod-signature-section {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    padding: 0 4%;
+}
+
+.signature-bento {
+    display: flex;
+    border: 3px solid var(--brand-red);
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-soft);
+}
+
+.signature-info-side {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    padding: 44px 4%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signature-info-side h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.signature-info-side p {
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+}
+
+.signature-cards-side {
+    flex: 1.3;
+    padding: 38px 4%;
+    background-color: var(--bg-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* 5. Pies & Cheesecakes: Diseño Suave con Galería */
+.prod-pies-section {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    padding: 0 4%;
+}
+
+.pies-container {
+    background-color: var(--bg-white);
+    border: 2px solid var(--brand-red);
+    border-radius: 16px;
+    padding: 42px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.pies-info {
+    flex: 1;
+    max-width: 420px;
+}
+
+.pies-info h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.pies-info p {
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+}
+
+.pies-gallery {
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+}
+
+/* 6. Masitas Dulces y Bocaditos: Cuadrícula Completa */
+.prod-masitas-section {
+    max-width: 1080px;
+    margin: 0 auto 50px;
+    padding: 0 4%;
+}
+
+.masitas-wrapper {
+    background-color: var(--bg-white);
+    border: 2px solid var(--brand-red);
+    border-radius: 18px;
+    padding: 42px 4%;
+    box-shadow: var(--shadow-soft);
+}
+
+.masitas-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 34px;
+}
+
+.masitas-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.masitas-header p {
+    font-size: 0.93rem;
     color: var(--text-primary);
 }
 
-.band-dark {
-    background-color: var(--brand-red);
-    color: var(--bg-white);
+.masitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    justify-items: center;
 }
 
-.catalog-container,
+.masitas-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 240px;
+}
+
+/* 7. Productos de Temporada: Edición Especial (Navidad & Halloween) */
+.prod-temporada-section {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    padding: 0 4%;
+}
+
+.temporada-wrapper {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F4 100%);
+    border: 2.5px solid var(--brand-red);
+    border-radius: 18px;
+    padding: 42px 4%;
+    box-shadow: var(--shadow-soft);
+}
+
+.temporada-badge {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.temporada-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 34px;
+}
+
+.temporada-header h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--brand-red);
+}
+
+.temporada-header p {
+    font-size: 0.94rem;
+    color: var(--text-primary);
+}
+
+.temporada-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    justify-items: center;
+}
+
+.temporada-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 240px;
+}
+
+/* Botón pequeño para añadir al carrito en tarjetas individuales */
+.btn-cart-sm {
+    background-color: var(--brand-red);
+    color: var(--bg-white);
+    border: 1.5px solid var(--brand-red);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.btn-cart-sm:hover {
+    background-color: var(--brand-red-hover);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   PÁGINA 3: OCASIONES
+   ========================================================================== */
 .occasion-row {
     max-width: 1020px;
     margin: 0 auto;
@@ -758,7 +1495,7 @@ main {
 }
 
 /* ==========================================================================
-   PÁGINA 4: NOSOTROS (FUSIÓN DE PASTEL Y FRANJAS COMPARTIDAS)
+   PÁGINA 4: NOSOTROS
    ========================================================================== */
 .about-main {
     padding-bottom: 50px;
@@ -794,7 +1531,6 @@ main {
     margin-bottom: 12px;
 }
 
-/* Imagen del pastel fusionada a la derecha de la card */
 .about-hero-cake {
     position: absolute;
     right: -25px;
@@ -814,7 +1550,6 @@ main {
     filter: brightness(0) invert(1);
 }
 
-/* Secciones divididas con franja guinda superior */
 .about-split-section {
     max-width: 1060px;
     margin: 0 auto 44px;
@@ -967,7 +1702,7 @@ main {
 }
 
 /* ==========================================================================
-   MODAL DE LOGIN / REGISTRO (CENTRADO)
+   MODAL DE LOGIN / REGISTRO Y PIE DE PÁGINA
    ========================================================================== */
 .modal-overlay {
     position: fixed;
@@ -1059,9 +1794,6 @@ main {
     font-size: 0.95rem;
 }
 
-/* ==========================================================================
-   BOTTOM / PIE DE PÁGINA (Al final del documento)
-   ========================================================================== */
 .site-footer {
     border: 3px solid var(--brand-red);
     background-color: var(--bg-cream);
@@ -1115,7 +1847,6 @@ main {
    DISEÑO RESPONSIVE 1: TABLETS (Hasta 992px)
    ========================================================================== */
 @media (max-width: 992px) {
-    /* Carrusel */
     .carousel-section {
         padding: 16px 46px;
     }
@@ -1128,15 +1859,50 @@ main {
         width: 240px;
     }
 
-    /* Catálogo Productos y Ocasiones: Texto arriba y 2 cards debajo centradas */
-    .catalog-container,
+    /* Productos Rediseñado en Tablet */
+    .editorial-card-container,
+    .pies-container,
+    .zigzag-container,
+    .signature-bento {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .editorial-info,
+    .pies-info {
+        max-width: 100%;
+    }
+
+    .prod-highlights li {
+        justify-content: center;
+    }
+
+    .product-card-unit.offset-down {
+        margin-top: 0;
+    }
+
+    .zigzag-container {
+        flex-direction: column-reverse;
+    }
+
+    .zigzag-text-box {
+        border-left: none;
+        border-top: 6px solid var(--brand-red);
+        border-radius: 14px;
+        width: 100%;
+    }
+
+    .signature-info-side {
+        align-items: center;
+    }
+
+    /* Ocasiones y Nosotros */
     .occasion-row {
         flex-direction: column;
         text-align: center;
         gap: 28px;
     }
 
-    /* En Ocasiones, asegura que el título siempre aparezca antes que las 2 cards */
     .occasion-row.cards-left {
         flex-direction: column-reverse;
     }
@@ -1150,7 +1916,6 @@ main {
         width: 100%;
     }
 
-    /* Nosotros */
     .about-hero-content {
         max-width: 60%;
     }
@@ -1182,7 +1947,6 @@ main {
    DISEÑO RESPONSIVE 2: CELULARES Y PHABLETS (Hasta 640px)
    ========================================================================== */
 @media (max-width: 640px) {
-    /* Top y Logotipo compactos */
     .top-utility-bar {
         padding: 8px 3%;
     }
@@ -1198,19 +1962,9 @@ main {
     }
 
     .logo-img {
-        height: 34px;
+        height: 40px;
     }
 
-    .brand-main {
-        font-size: 1.4rem;
-    }
-
-    .brand-sub {
-        font-size: 0.52rem;
-        letter-spacing: 1.8px;
-    }
-
-    /* Navegación de 4 pestañas adaptable sin salirse de pantalla */
     .main-nav {
         padding: 8px 2%;
     }
@@ -1231,7 +1985,11 @@ main {
         border-width: 2px;
     }
 
-    /* Desplegables centrados al ancho del móvil */
+    .word-ticker {
+        font-size: 0.74rem;
+        padding: 5px 0;
+    }
+
     .hamburger-dropdown,
     .search-card-dropdown,
     .cart-card-dropdown {
@@ -1243,7 +2001,6 @@ main {
         padding: 18px 16px;
     }
 
-    /* Carrusel en celular */
     .carousel-section {
         padding: 10px 34px;
         margin: 10px auto 28px;
@@ -1265,7 +2022,7 @@ main {
 
     .slide-media .square-card {
         width: 100%;
-        max-width: 240px;
+        max-width: 230px;
     }
 
     .carousel-arrow {
@@ -1276,7 +2033,6 @@ main {
     .carousel-arrow.prev { left: 2px; }
     .carousel-arrow.next { right: 2px; }
 
-    /* Productos más vendidos: 1 columna centrada en móvil */
     .best-sellers-section {
         padding: 36px 5% 44px;
     }
@@ -1294,7 +2050,6 @@ main {
         max-width: 240px;
     }
 
-    /* Pedidos especiales */
     .special-orders-section {
         padding: 40px 5%;
     }
@@ -1309,9 +2064,26 @@ main {
         width: 230px;
     }
 
-    /* Grilla de 2 Cards en Productos y Ocasiones */
-    .catalog-band {
-        padding: 36px 4%;
+    /* Productos Rediseñado en Móvil */
+    .editorial-gallery.staggered,
+    .pies-gallery,
+    .zigzag-gallery,
+    .signature-cards-side,
+    .atelier-cards-row {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .product-card-unit,
+    .atelier-card-item {
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .product-card-unit .square-card,
+    .atelier-card-item .square-card {
+        width: 100%;
     }
 
     .occasions-main {
@@ -1324,7 +2096,6 @@ main {
         max-width: 420px;
     }
 
-    /* Nosotros en móvil */
     .about-hero-card {
         flex-direction: column;
         text-align: center;
@@ -1358,7 +2129,6 @@ main {
         margin: 0 auto;
     }
 
-    /* Contacto en móvil */
     .contact-box {
         flex-direction: column;
         text-align: center;
@@ -1392,7 +2162,6 @@ main {
         font-size: 4rem;
     }
 
-    /* Footer en móvil */
     .site-footer {
         padding: 24px 6% 48px;
     }
@@ -1403,14 +2172,7 @@ main {
     }
 }
 
-/* ==========================================================================
-   DISEÑO RESPONSIVE 3: CELULARES PEQUEÑOS (Hasta 380px)
-   ========================================================================== */
 @media (max-width: 380px) {
-    .brand-text {
-        display: none; /* Deja solo el isotipo de la torta si la pantalla es muy angosta */
-    }
-
     .catalog-cards {
         grid-template-columns: 1fr;
         max-width: 230px;

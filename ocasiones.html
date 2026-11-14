@@ -27,10 +27,7 @@
             </div>
 
             <a href="index.html" class="brand-logo">
-                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img" onerror="this.style.display='none'">
-                <div class="brand-text">
-                
-                </div>
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img">
             </a>
 
             <div class="utility-right">
@@ -82,18 +79,22 @@
                 <h4>Búsquedas populares</h4>
                 <div class="trending-pills">
                     <a href="ocasiones.html" class="pill">cumpleaños</a>
-                    <a href="productos.html" class="pill">brownies</a>
-                    <a href="productos.html" class="pill">selva negra</a>
-                    <a href="productos.html" class="pill">tortas</a>
-                    <a href="index.html" class="pill">galletas</a>
-                    <a href="productos.html" class="pill">queques</a>
+                    <a href="productos.html#sec-brownies" class="pill">brownies</a>
+                    <a href="tortas.html" class="pill">selva negra</a>
+                    <a href="tortas.html" class="pill">tortas</a>
+                    <a href="pies.html" class="pill">pie de limón</a>
+                    <a href="masitas.html" class="pill">masitas dulces</a>
+                    <a href="productos.html#sec-queques" class="pill">queques</a>
                 </div>
             </div>
             <div class="search-section">
                 <h4>Comprar por categoría</h4>
                 <ul class="category-search-list">
-                    <li><a href="ocasiones.html">Regalos de Cumpleaños</a></li>
-                    <li><a href="productos.html">Tortas Personalizadas</a></li>
+                    <li><a href="ocasiones.html">Regalos y Ocasiones</a></li>
+                    <li><a href="tortas.html">Tortas Clásicas</a></li>
+                    <li><a href="personalizadas.html">Tortas Personalizadas</a></li>
+                    <li><a href="pies.html">Pies y Tartas</a></li>
+                    <li><a href="masitas.html">Masitas y Bocaditos</a></li>
                     <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
                 </ul>
             </div>
@@ -111,7 +112,7 @@
                     <span>Total estimado:</span>
                     <strong id="cart-total-price">Bs. 0</strong>
                 </div>
-                <a href="contacto.html" class="btn-primary full-width">Finalizar pedido por WhatsApp</a>
+                <a href="https://wa.me/59168081109" target="_blank" rel="noopener" class="btn-primary full-width checkout-whatsapp-btn">Finalizar pedido por WhatsApp</a>
             </div>
         </div>
     </header>
@@ -121,83 +122,56 @@
          ================================================================= -->
     <main class="occasions-main">
         <!-- 1. CUMPLEAÑOS (2 Cards a la izquierda, texto a la derecha) -->
-        <section class="occasion-row cards-left">
+        <section class="occasion-row cards-left" id="sec-cumpleanios">
             <div class="catalog-cards">
-                <!-- =========================================================
-                     IMAGEN DE CARD CUMPLEAÑOS 1:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/cumpleanos-1.jpg" alt="Cumpleaños 1"> -->
+                <div class="square-card border-red floating-card">
+                    <img src="images/cumpleanios/Cumple1.webp" alt="Tortas Temáticas Barbie de Cumpleaños con Coronas y Estrellas">
                 </div>
-
-                <!-- =========================================================
-                     IMAGEN DE CARD CUMPLEAÑOS 2:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/cumpleanos-2.jpg" alt="Cumpleaños 2"> -->
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/cumpleanios/Cumple2.webp" alt="Mesa Temática de Cumpleaños Paw Patrol con Tortas y Bocaditos">
                 </div>
             </div>
             <div class="catalog-info">
                 <h2>CUMPLEAÑOS</h2>
-                <p>Déjate conquistar por nuestros irresistibles brownies, con una textura suave, un intenso sabor a chocolate y ese toque dulce que convierte cada bocado en un momento especial.</p>
-                <button class="btn-outline add-to-cart-btn" data-name="Box Cumpleaños" data-price="85">
-                    Añadir Box Cumpleaños (Bs. 85)
+                <p>Celebra un año más de vida con nuestras tortas temáticas personalizadas y montajes para fiesta. Desde sets completos de tortas Barbie en tonos rosa con coronas hasta mesas temáticas infantiles con personajes de Paw Patrol y bocaditos.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Set Torta Cumpleaños" data-price="120">
+                    Añadir Torta Cumpleaños (Bs. 120)
                 </button>
             </div>
         </section>
 
         <!-- 2. AMOR Y AMISTAD (Texto a la izquierda, 2 Cards a la derecha) -->
-        <section class="occasion-row cards-right">
+        <section class="occasion-row cards-right" id="sec-amor">
             <div class="catalog-info">
                 <h2>AMOR Y AMISTAD</h2>
-                <p>Sorprende a esa persona especial con dulces detalles hechos para compartir y expresar tu cariño.</p>
-                <button class="btn-outline add-to-cart-btn" data-name="Detalle Amor y Amistad" data-price="60">
-                    Añadir Detalle Dulce (Bs. 60)
+                <p>Sorprende a esa persona especial con detalles dulces que conquistan el corazón: mini tortas de chocolate con pétalos artesanales de cacao nevados y tiernos alfajores unicornio decorados a mano en fino fondant.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Detalle Dulce Amor y Amistad" data-price="55">
+                    Añadir Detalle Amor (Bs. 55)
                 </button>
             </div>
             <div class="catalog-cards">
-                <!-- =========================================================
-                     IMAGEN DE CARD AMOR Y AMISTAD 1:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/amor-amistad-1.jpg" alt="Amor y Amistad 1"> -->
+                <div class="square-card border-red floating-card">
+                    <img src="images/amor_amistad/Amor_amistad1.webp" alt="Mini Tortas Rosas de Chocolate con Pétalos de Cacao y Azúcar">
                 </div>
-
-                <!-- =========================================================
-                     IMAGEN DE CARD AMOR Y AMISTAD 2:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/amor-amistad-2.jpg" alt="Amor y Amistad 2"> -->
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/amor_amistad/Amor_amistad2.webp" alt="Torre de Alfajores Tiernos Unicornio con Fondant y Flores">
                 </div>
             </div>
         </section>
 
         <!-- 3. REUNIONES Y EVENTOS (2 Cards a la izquierda, texto a la derecha) -->
-        <section class="occasion-row cards-left">
+        <section class="occasion-row cards-left" id="sec-eventos">
             <div class="catalog-cards">
-                <!-- =========================================================
-                     IMAGEN DE CARD REUNIONES 1:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/reuniones-1.jpg" alt="Reuniones y Eventos 1"> -->
+                <div class="square-card border-red floating-card">
+                    <img src="images/reuniones_eventos/Reunion_evento1.webp" alt="Torta Revelación de Género y Baby Shower">
                 </div>
-
-                <!-- =========================================================
-                     IMAGEN DE CARD REUNIONES 2:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/reuniones-2.jpg" alt="Reuniones y Eventos 2"> -->
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/reuniones_eventos/Reunion_evento2.webp" alt="Mesa Monumental de Gala con Torres de Tortas y Fuentes de Cristal">
                 </div>
             </div>
             <div class="catalog-info">
                 <h2>REUNIONES Y EVENTOS</h2>
-                <p>Comparte momentos inolvidables con deliciosas opciones para tus reuniones, celebraciones y eventos especiales.</p>
+                <p>Momentos inolvidables con montajes de gala y mesas dulces para celebraciones familiares o corporativas: tortas para Baby Shower y revelación de género, además de impresionantes montajes con cascadas de cristal para 15 años y bodas.</p>
                 <button class="btn-outline add-to-cart-btn" data-name="Catering Dulce Eventos" data-price="180">
                     Añadir Pack Eventos (Bs. 180)
                 </button>
@@ -205,30 +179,40 @@
         </section>
 
         <!-- 4. REGALOS (Texto a la izquierda, 2 Cards a la derecha) -->
-        <section class="occasion-row cards-right">
+        <section class="occasion-row cards-right" id="sec-regalos">
             <div class="catalog-info">
-                <h2>REGALOS</h2>
-                <p>Regala sonrisas con dulces detalles ideales para sorprender y alegrar el día de alguien especial.</p>
-                <button class="btn-outline add-to-cart-btn" data-name="Caja de Regalo Especial" data-price="70">
-                    Añadir Caja Regalo (Bs. 70)
+                <h2>REGALOS Y DETALLES</h2>
+                <p>Regala sonrisas con nuestras exclusivas cajas gourmet listas para obsequiar: cajas surtidas con rollos suizos decorados con frutas frescas y ganache, o cajas temáticas de alfajores artesanales con moño decorativo.</p>
+                <button class="btn-outline add-to-cart-btn" data-name="Caja de Regalo Especial" data-price="75">
+                    Añadir Caja Regalo (Bs. 75)
                 </button>
             </div>
             <div class="catalog-cards">
-                <!-- =========================================================
-                     IMAGEN DE CARD REGALOS 1:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/regalos-1.jpg" alt="Regalos 1"> -->
+                <div class="square-card border-red floating-card">
+                    <img src="images/regalos/regalo1.png" alt="Box Regalo con 4 Rollos Suizos Gourmet y Frutas Frescas">
                 </div>
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/regalos/regalo2.png" alt="Box Regalo con 9 Alfajores Temáticos Bart Simpson con Moño">
+                </div>
+            </div>
+        </section>
 
-                <!-- =========================================================
-                     IMAGEN DE CARD REGALOS 2:
-                     Descomenta <img> y coloca tu archivo en images/
-                     ========================================================= -->
-                <div class="square-card border-red">
-                    <!-- <img src="images/regalos-2.jpg" alt="Regalos 2"> -->
+        <!-- 5. FIESTAS Y TEMPORADAS (2 Cards a la izquierda, texto a la derecha) -->
+        <section class="occasion-row cards-left" id="sec-temporadas">
+            <div class="catalog-cards">
+                <div class="square-card border-red floating-card">
+                    <img src="images/productos_temporada/product_temp4.webp" alt="Rosca Navideña Tradicional Feliz Navidad">
                 </div>
+                <div class="square-card border-red floating-card float-delay-2">
+                    <img src="images/productos_temporada/product_temp3.jpg" alt="Bocaditos Temáticos de Halloween con Arañas">
+                </div>
+            </div>
+            <div class="catalog-info">
+                <h2>FIESTAS Y TEMPORADAS</h2>
+                <p>Haz inolvidables tus festividades de fin de año y noches temáticas. Ofrecemos exquisitas Roscas Navideñas tradicionales, Casitas de Jengibre y divertidos bocaditos de Halloween con arañas decoradas para compartir.</p>
+                <a href="index.html" class="btn-outline">
+                    Ver en el carrusel de inicio
+                </a>
             </div>
         </section>
     </main>

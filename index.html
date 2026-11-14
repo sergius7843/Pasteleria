@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brownies Pastelería | Inicio</title>
-    <!-- Fuentes de Google para replicar tipografía de marca y textos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Iconos de Font Awesome (WhatsApp, TikTok, Instagram, Carrito, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- =================================================================
-         TOP / ENCABEZADO FIJO (Presente en todas las páginas)
+         TOP / ENCABEZADO FIJO + CARRUSEL PEQUEÑO DE PALABRAS
          ================================================================= -->
     <header class="site-header">
-        <!-- Nivel 1: Barra de utilidades y Logotipo central -->
+        <!-- Nivel 1: Barra de utilidades y Logotipo central (solo imagen) -->
         <div class="top-utility-bar">
             <div class="utility-left">
                 <button class="icon-btn" id="btn-hamburger" aria-label="Abrir menú">
@@ -29,16 +27,9 @@
                 </a>
             </div>
 
-            <!-- Logotipo Central -->
+            <!-- Logotipo Central: Solo la imagen logotipo.png -->
             <a href="index.html" class="brand-logo">
-                <!-- =====================================================
-                     IMAGEN DEL LOGOTIPO PRINCIPAL
-                     Asegúrate de tener "images/logotipo.png"
-                     ===================================================== -->
-                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img" onerror="this.style.display='none'">
-                <div class="brand-text">
-                
-                </div>
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img">
             </a>
 
             <div class="utility-right">
@@ -55,7 +46,7 @@
             </div>
         </div>
 
-        <!-- Nivel 2: Pestañas de navegación principales -->
+        <!-- Nivel 2: Pestañas de navegación -->
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="productos.html" class="nav-link">Productos</a></li>
@@ -64,6 +55,28 @@
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
+
+        <!-- Nivel 3: Carrusel pequeño de palabras siempre en movimiento -->
+        <div class="word-ticker">
+            <div class="word-ticker-track">
+                <!-- Bloque 1 de frases -->
+                <div class="ticker-group">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+                <!-- Bloque 2 idéntico para efecto infinito sin cortes -->
+                <div class="ticker-group" aria-hidden="true">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+            </div>
+        </div>
 
         <!-- Menú desplegable Hamburguesa -->
         <div class="hamburger-dropdown" id="hamburger-menu">
@@ -76,13 +89,11 @@
             </ul>
         </div>
 
-        <!-- Card Desplegable de Búsqueda (Referencia Imagen 6) -->
+        <!-- Card Desplegable de Búsqueda -->
         <div class="search-card-dropdown" id="search-card">
             <div class="search-card-header">
                 <h3>Buscar</h3>
-                <button class="close-btn" id="close-search" aria-label="Cerrar búsqueda">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <button class="close-btn" id="close-search"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="search-input-wrapper">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -92,41 +103,40 @@
                 <h4>Búsquedas populares</h4>
                 <div class="trending-pills">
                     <a href="ocasiones.html" class="pill">cumpleaños</a>
-                    <a href="productos.html" class="pill">brownies</a>
-                    <a href="productos.html" class="pill">selva negra</a>
-                    <a href="productos.html" class="pill">tortas</a>
-                    <a href="index.html" class="pill">galletas</a>
-                    <a href="productos.html" class="pill">queques</a>
-                    <a href="ocasiones.html" class="pill">regalos</a>
+                    <a href="productos.html#sec-brownies" class="pill">brownies</a>
+                    <a href="tortas.html" class="pill">selva negra</a>
+                    <a href="tortas.html" class="pill">tortas</a>
+                    <a href="pies.html" class="pill">pie de limón</a>
+                    <a href="masitas.html" class="pill">masitas dulces</a>
+                    <a href="productos.html#sec-queques" class="pill">queques</a>
                 </div>
             </div>
             <div class="search-section">
                 <h4>Comprar por categoría</h4>
                 <ul class="category-search-list">
-                    <li><a href="ocasiones.html">Regalos de Cumpleaños</a></li>
-                    <li><a href="productos.html">Tortas Personalizadas</a></li>
+                    <li><a href="ocasiones.html">Regalos y Celebraciones</a></li>
+                    <li><a href="tortas.html">Tortas Clásicas</a></li>
+                    <li><a href="personalizadas.html">Tortas Personalizadas</a></li>
+                    <li><a href="pies.html">Pies y Tartas</a></li>
+                    <li><a href="masitas.html">Masitas y Bocaditos</a></li>
                     <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Card Desplegable de Carrito de Compras -->
+        <!-- Card Desplegable de Carrito -->
         <div class="cart-card-dropdown" id="cart-card">
             <div class="cart-card-header">
                 <h3><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h3>
-                <button class="close-btn" id="close-cart" aria-label="Cerrar carrito">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="cart-items-container" id="cart-items">
-                <!-- Los productos se cargan dinámicamente desde scripts.js -->
-            </div>
+            <div class="cart-items-container" id="cart-items"></div>
             <div class="cart-card-footer">
                 <div class="cart-total">
                     <span>Total estimado:</span>
                     <strong id="cart-total-price">Bs. 0</strong>
                 </div>
-                <a href="contacto.html" class="btn-primary full-width">Finalizar pedido por WhatsApp</a>
+                <a href="https://wa.me/59168081109" target="_blank" rel="noopener" class="btn-primary full-width checkout-whatsapp-btn">Finalizar pedido por WhatsApp</a>
             </div>
         </div>
     </header>
@@ -142,66 +152,70 @@
             </button>
 
             <div class="carousel-track-container">
-                <!-- Slide 1 (Diseño principal de la captura 1) -->
+                <!-- Slide 1: Casita Navideña de Jengibre -->
                 <article class="carousel-slide active">
                     <div class="slide-text">
                         <h2>Producto de temporada</h2>
-                        <h3>Galletitas que dan miedo... ¡de lo lindas que son!</h3>
-                        <p>Endulza tu Halloween con nuestras galletas temáticas, decoradas con diseños espeluznantemente deliciosos. ¡Perfectas para regalar, compartir o disfrutar en tu fiesta!</p>
-                        <button class="btn-outline add-to-cart-btn" data-name="Pack Galletas de Temporada" data-price="35">
+                        <h3>Casita Navideña de Jengibre Artesanal</h3>
+                        <p>Endulza tus fiestas con nuestra mágica casita de masa dulce de jengibre especiada, decorada a mano con glasé real nevado, tejado de confites de colores y detalles festivos. ¡Ideal como centro de mesa o regalo!</p>
+                        <button class="btn-outline add-to-cart-btn" data-name="Casita Navideña de Jengibre" data-price="70">
+                            Agregar al carrito (Bs. 70)
+                        </button>
+                    </div>
+                    <div class="slide-media">
+                        <div class="square-card border-red floating-card">
+                            <img src="images/productos_temporada/product_temp1.webp" alt="Casita Navideña de Jengibre Artesanal">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Slide 2: Rosca Navideña Tradicional -->
+                <article class="carousel-slide">
+                    <div class="slide-text">
+                        <h2>Tradición de fin de año</h2>
+                        <h3>Roscas Navideñas "Feliz Navidad"</h3>
+                        <p>Deliciosa masa dulce suave y esponjosa horneada artesanalmente con frutas confitadas, pasas selectas y lluvia de azúcar nevada. Viene en empaque festivo lista para compartir en la cena familiar.</p>
+                        <button class="btn-outline add-to-cart-btn" data-name="Rosca Navideña Tradicional" data-price="35">
                             Agregar al carrito (Bs. 35)
                         </button>
                     </div>
                     <div class="slide-media">
-                        <!-- =================================================
-                             IMAGEN DE CARD CARRUSEL 1:
-                             Cambia el src="images/tu-imagen.jpg" cuando la tengas
-                             ================================================= -->
-                        <div class="square-card border-red">
-                            <!-- <img src="images/galletas-halloween.jpg" alt="Galletas temáticas de Halloween"> -->
-                            <span class="card-placeholder-hint">Espacio para imagen<br>(Carrusel 1)</span>
+                        <div class="square-card border-red floating-card">
+                            <img src="images/productos_temporada/product_temp4.webp" alt="Rosca Navideña Tradicional Feliz Navidad">
                         </div>
                     </div>
                 </article>
 
-                <!-- Slide 2 -->
+                <!-- Slide 3: Árbol Navideño de Estrellas -->
                 <article class="carousel-slide">
                     <div class="slide-text">
-                        <h2>Especialidad de la casa</h2>
-                        <h3>¡Brownies recién horneados con intenso chocolate!</h3>
-                        <p>Textura húmeda por dentro y una capa crujiente por fuera. Ideales para acompañar tus tardes o compartir con tus personas favoritas.</p>
-                        <button class="btn-outline add-to-cart-btn" data-name="Caja de Brownies Clásicos" data-price="45">
-                            Agregar al carrito (Bs. 45)
+                        <h2>Especial navideño</h2>
+                        <h3>Árbol Navideño en Torre de Estrellas</h3>
+                        <p>Espectacular creación en niveles de estrellas horneadas y especiadas, glaseadas en verde nevado con adornos comestibles y coronadas con una estrella dorada.</p>
+                        <button class="btn-outline add-to-cart-btn" data-name="Árbol Navideño de Estrellas" data-price="55">
+                            Agregar al carrito (Bs. 55)
                         </button>
                     </div>
                     <div class="slide-media">
-                        <!-- =================================================
-                             IMAGEN DE CARD CARRUSEL 2:
-                             Descomenta la etiqueta <img> y coloca tu imagen
-                             ================================================= -->
-                        <div class="square-card border-red">
-                            <!-- <img src="images/carrusel-brownies.jpg" alt="Brownies clásicos"> -->
-                            <span class="card-placeholder-hint">Espacio para imagen<br>(Carrusel 2)</span>
+                        <div class="square-card border-red floating-card">
+                            <img src="images/productos_temporada/product_temp2.webp" alt="Árbol Navideño en Torre de Estrellas">
                         </div>
                     </div>
                 </article>
 
-                <!-- Slide 3 -->
+                <!-- Slide 4: Bocaditos de Halloween -->
                 <article class="carousel-slide">
                     <div class="slide-text">
-                        <h2>Tortas a tu medida</h2>
-                        <h3>Celebraciones únicas con sabores inolvidables</h3>
-                        <p>Personalizamos cada detalle de tu torta para cumpleaños, aniversarios y eventos especiales. Haz tu pedido con anticipación.</p>
-                        <a href="productos.html" class="btn-outline">Ver catálogo de tortas</a>
+                        <h2>Especial de Halloween</h2>
+                        <h3>Bocaditos Temáticos con Arañas y Telaraña</h3>
+                        <p>Bañados en chocolate con divertidas arañitas artesanales modeladas a mano, telarañas de glasé dulce y chispas de colores. ¡El detalle terroríficamente delicioso para tu fiesta!</p>
+                        <button class="btn-outline add-to-cart-btn" data-name="Pack Halloween Arañitas (x6)" data-price="35">
+                            Agregar al carrito (Bs. 35)
+                        </button>
                     </div>
                     <div class="slide-media">
-                        <!-- =================================================
-                             IMAGEN DE CARD CARRUSEL 3:
-                             Descomenta la etiqueta <img> y coloca tu imagen
-                             ================================================= -->
-                        <div class="square-card border-red">
-                            <!-- <img src="images/carrusel-tortas.jpg" alt="Tortas personalizadas"> -->
-                            <span class="card-placeholder-hint">Espacio para imagen<br>(Carrusel 3)</span>
+                        <div class="square-card border-red floating-card">
+                            <img src="images/productos_temporada/product_temp3.jpg" alt="Bocaditos Temáticos de Halloween con Arañas">
                         </div>
                     </div>
                 </article>
@@ -215,6 +229,7 @@
                 <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
                 <button class="dot" data-slide="1" aria-label="Slide 2"></button>
                 <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+                <button class="dot" data-slide="3" aria-label="Slide 4"></button>
             </div>
         </section>
 
@@ -223,44 +238,32 @@
             <h2 class="section-title-light">PRODUCTOS MAS<br>VENDIDOS</h2>
 
             <div class="best-sellers-grid">
-                <!-- Card 1: Brownies -->
+                <!-- Card 1: Brownies Clásicos -->
                 <div class="best-seller-item">
-                    <!-- =====================================================
-                         IMAGEN DE CARD: BROWNIES
-                         Descomenta <img> y pon el nombre de tu imagen en images/
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/mas-vendido-brownies.jpg" alt="Brownies"> -->
+                    <div class="square-card border-white floating-card float-delay-1">
+                        <img src="images/brownies/brownie.jpg" alt="Brownies Clásicos Fudge">
                     </div>
-                    <button class="pill-label add-to-cart-btn" data-name="Brownies Clásicos" data-price="25" title="Clic para añadir al carrito">
-                        BROWNIES
+                    <button class="pill-label add-to-cart-btn" data-name="Brownies Clásicos (Pack x4)" data-price="25">
+                        BROWNIES CLÁSICOS
                     </button>
                 </div>
 
-                <!-- Card 2: Brownies Almendras -->
+                <!-- Card 2: Brownies Caramelo -->
                 <div class="best-seller-item">
-                    <!-- =====================================================
-                         IMAGEN DE CARD: BROWNIES ALMENDRAS
-                         Descomenta <img> y pon el nombre de tu imagen en images/
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/mas-vendido-almendras.jpg" alt="Brownies Almendras"> -->
+                    <div class="square-card border-white floating-card float-delay-2">
+                        <img src="images/brownies/brownie_con_almendra.jpg" alt="Brownies Especiales con Caramelo">
                     </div>
-                    <button class="pill-label add-to-cart-btn" data-name="Brownies con Almendras" data-price="30" title="Clic para añadir al carrito">
-                        BROWNIES ALMENDRAS
+                    <button class="pill-label add-to-cart-btn" data-name="Brownies con Caramelo (Pack x4)" data-price="30">
+                        BROWNIES CARAMELO
                     </button>
                 </div>
 
                 <!-- Card 3: Selva Negra -->
                 <div class="best-seller-item">
-                    <!-- =====================================================
-                         IMAGEN DE CARD: SELVA NEGRA
-                         Descomenta <img> y pon el nombre de tu imagen en images/
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/mas-vendido-selva-negra.jpg" alt="Torta Selva Negra"> -->
+                    <div class="square-card border-white floating-card float-delay-3">
+                        <img src="images/tortas/torta2.png" alt="Torta Selva Negra Tradicional">
                     </div>
-                    <button class="pill-label add-to-cart-btn" data-name="Torta Selva Negra" data-price="95" title="Clic para añadir al carrito">
+                    <button class="pill-label add-to-cart-btn" data-name="Torta Selva Negra" data-price="90">
                         SELVA NEGRA
                     </button>
                 </div>
@@ -271,38 +274,28 @@
         <section class="special-orders-section">
             <div class="special-orders-container">
                 <div class="special-order-media">
-                    <!-- =====================================================
-                         IMAGEN DE CARD: PEDIDOS ESPECIALES
-                         Descomenta <img> y pon el nombre de tu imagen en images/
-                         ===================================================== -->
-                    <div class="square-card border-red">
-                        <!-- <img src="images/pedidos-especiales.jpg" alt="Pedidos Especiales"> -->
+                    <div class="square-card border-red floating-card float-delay-2">
+                        <img src="images/tortas_personalizadas/torta_personalizada2.webp" alt="Torta personalizada artística Mario Bros">
                     </div>
                 </div>
                 <div class="special-order-text">
                     <h2>PEDIDOS ESPECIALES</h2>
                     <h3>¡Creamos algo dulce para tus momentos especiales!</h3>
-                    <p>Celebra a tu manera con nuestros productos personalizados. Cuéntanos tu idea y hagamos realidad un detalle delicioso para esa ocasión especial.</p>
-                    <a href="contacto.html" class="btn-primary">Cotizar pedido especial</a>
+                    <p>Celebra a tu manera con nuestras tortas temáticas personalizadas y cajas de postres a medida. Cuéntanos tu idea y hagamos realidad un detalle delicioso para esa ocasión especial.</p>
+                    <a href="https://wa.me/59168081109?text=Hola%20Brownies%20Pasteler%C3%ADa!%20Quisiera%20cotizar%20un%20pedido%20especial%20personalizado." target="_blank" rel="noopener" class="btn-primary">Cotizar pedido especial</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- =================================================================
-         MODAL DE USUARIO (LOGIN / REGISTRO EN MEDIO DE LA PANTALLA)
-         ================================================================= -->
+    <!-- Modal Usuario -->
     <div class="modal-overlay" id="user-modal">
         <div class="user-modal-card">
-            <button class="close-btn modal-close" id="close-user-modal" aria-label="Cerrar ventana">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+            <button class="close-btn modal-close" id="close-user-modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-tabs">
                 <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
                 <button class="tab-btn" data-tab="register">Registrarse</button>
             </div>
-
-            <!-- Formulario Login -->
             <form class="auth-form active" id="form-login">
                 <h3>¡Bienvenido de nuevo!</h3>
                 <div class="form-group">
@@ -315,8 +308,6 @@
                 </div>
                 <button type="submit" class="btn-primary full-width">Ingresar</button>
             </form>
-
-            <!-- Formulario Registro -->
             <form class="auth-form" id="form-register">
                 <h3>Crea tu cuenta dulce</h3>
                 <div class="form-group">
@@ -340,9 +331,7 @@
         </div>
     </div>
 
-    <!-- =================================================================
-         BOTTOM / PIE DE PÁGINA (Visible al llegar al final de la página)
-         ================================================================= -->
+    <!-- Pie de página -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -362,9 +351,7 @@
                     <li><a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
                 </ul>
             </div>
-            <a href="#" class="footer-arrow" title="Volver arriba" aria-label="Subir al inicio">
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <a href="#" class="footer-arrow" title="Volver arriba"><i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </footer>
 

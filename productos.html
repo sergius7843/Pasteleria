@@ -13,7 +13,7 @@
 <body>
 
     <!-- =================================================================
-         TOP / ENCABEZADO FIJO
+         TOP / ENCABEZADO FIJO + CARRUSEL PEQUEÑO DE PALABRAS
          ================================================================= -->
     <header class="site-header">
         <div class="top-utility-bar">
@@ -26,11 +26,9 @@
                 </a>
             </div>
 
+            <!-- Logotipo Central: Solo la imagen logotipo.png -->
             <a href="index.html" class="brand-logo">
-                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img" onerror="this.style.display='none'">
-                <div class="brand-text">
-                  
-                </div>
+                <img src="images/logotipo.png" alt="Logo Brownies Pastelería" class="logo-img">
             </a>
 
             <div class="utility-right">
@@ -49,13 +47,32 @@
 
         <nav class="main-nav">
             <ul class="nav-list">
-                <!-- Clase "active" remarca la pestaña actual -->
                 <li><a href="productos.html" class="nav-link active">Productos</a></li>
                 <li><a href="ocasiones.html" class="nav-link">Ocasiones</a></li>
                 <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
+
+        <!-- Carrusel pequeño de palabras siempre en movimiento -->
+        <div class="word-ticker">
+            <div class="word-ticker-track">
+                <div class="ticker-group">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+                <div class="ticker-group" aria-hidden="true">
+                    <span><i class="fa-solid fa-cake-candles"></i> Recién horneados todos los días</span>
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Tortas personalizadas para tu evento</span>
+                    <span><i class="fa-solid fa-heart"></i> Hechos con amor y el mejor chocolate</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> Pedidos al +591 68081109</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Visítanos en nuestras 2 sucursales</span>
+                </div>
+            </div>
+        </div>
 
         <!-- Menú Hamburguesa -->
         <div class="hamburger-dropdown" id="hamburger-menu">
@@ -82,18 +99,22 @@
                 <h4>Búsquedas populares</h4>
                 <div class="trending-pills">
                     <a href="ocasiones.html" class="pill">cumpleaños</a>
-                    <a href="productos.html" class="pill">brownies</a>
-                    <a href="productos.html" class="pill">selva negra</a>
-                    <a href="productos.html" class="pill">tortas</a>
-                    <a href="index.html" class="pill">galletas</a>
-                    <a href="productos.html" class="pill">queques</a>
+                    <a href="#sec-brownies" class="pill">brownies</a>
+                    <a href="tortas.html" class="pill">selva negra</a>
+                    <a href="tortas.html" class="pill">tortas</a>
+                    <a href="pies.html" class="pill">pie de limón</a>
+                    <a href="masitas.html" class="pill">masitas dulces</a>
+                    <a href="#sec-queques" class="pill">queques</a>
                 </div>
             </div>
             <div class="search-section">
                 <h4>Comprar por categoría</h4>
                 <ul class="category-search-list">
-                    <li><a href="ocasiones.html">Regalos de Cumpleaños</a></li>
-                    <li><a href="productos.html">Tortas Personalizadas</a></li>
+                    <li><a href="ocasiones.html">Regalos y Ocasiones</a></li>
+                    <li><a href="tortas.html">Tortas Clásicas</a></li>
+                    <li><a href="personalizadas.html">Tortas Personalizadas</a></li>
+                    <li><a href="pies.html">Pies y Tartas</a></li>
+                    <li><a href="masitas.html">Masitas y Bocaditos</a></li>
                     <li><a href="index.html#mas-vendidos">Productos Más Vendidos</a></li>
                 </ul>
             </div>
@@ -111,134 +132,240 @@
                     <span>Total estimado:</span>
                     <strong id="cart-total-price">Bs. 0</strong>
                 </div>
-                <a href="contacto.html" class="btn-primary full-width">Finalizar pedido por WhatsApp</a>
+                <a href="https://wa.me/59168081109" target="_blank" rel="noopener" class="btn-primary full-width checkout-whatsapp-btn">Finalizar pedido por WhatsApp</a>
             </div>
         </div>
     </header>
 
     <!-- =================================================================
-         SECCIONES DE PRODUCTOS (Captura 2)
+         CATÁLOGO DE PRODUCTOS: EXPLORAR MENÚ + BROWNIES & QUEQUES
          ================================================================= -->
-    <main>
-        <!-- 1. TORTAS (Fondo claro) -->
-        <section class="catalog-band band-light">
-            <div class="catalog-container">
-                <div class="catalog-info">
-                    <h2>TORTAS</h2>
-                    <p>Endulza tus momentos especiales con nuestras deliciosas tortas, elaboradas para compartir, celebrar y crear recuerdos inolvidables.</p>
-                    <button class="btn-outline add-to-cart-btn" data-name="Torta Clásica" data-price="90">
-                        Agregar Torta al carrito (Bs. 90)
+    <main class="products-page">
+
+        <!-- Navegación rápida de categorías (Chips interactivos) -->
+        <section class="category-quick-nav">
+            <span class="quick-nav-label">Explorar menú:</span>
+            <div class="quick-nav-pills">
+                <a href="tortas.html" class="cat-chip"><i class="fa-solid fa-cake-candles"></i> Tortas Clásicas</a>
+                <a href="pies.html" class="cat-chip"><i class="fa-solid fa-pie-chart"></i> Pies & Cheesecakes</a>
+                <a href="personalizadas.html" class="cat-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Personalizadas</a>
+                <a href="masitas.html" class="cat-chip"><i class="fa-solid fa-cookie"></i> Masitas & Bocaditos</a>
+                <a href="#sec-brownies" class="cat-chip active"><i class="fa-solid fa-square"></i> Brownies</a>
+                <a href="#sec-queques" class="cat-chip"><i class="fa-solid fa-bread-slice"></i> Queques</a>
+                <a href="ocasiones.html#sec-cumpleanios" class="cat-chip"><i class="fa-solid fa-gift"></i> Cumpleaños</a>
+                <a href="ocasiones.html#sec-amor" class="cat-chip"><i class="fa-solid fa-heart"></i> Amor & Amistad</a>
+                <a href="ocasiones.html#sec-eventos" class="cat-chip"><i class="fa-solid fa-champagne-glasses"></i> Eventos</a>
+                <a href="ocasiones.html#sec-regalos" class="cat-chip"><i class="fa-solid fa-box-open"></i> Regalos</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1: EXPLORAR POR CATEGORÍAS (Acceso a páginas dedicadas) -->
+        <section class="category-explorer-section">
+            <div class="category-explorer-header">
+                <span class="prod-badge">Nuestras Especialidades</span>
+                <h2>EXPLORAR POR CATEGORÍAS</h2>
+                <p>Haz clic en cualquiera de nuestras categorías para ver el catálogo completo de tortas, tartas, masitas y mesas temáticas.</p>
+            </div>
+
+            <div class="category-cards-grid">
+                <!-- Card 1: Tortas Clásicas -->
+                <a href="tortas.html" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/tortas/torta2.png" alt="Tortas Clásicas y Especiales">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Tortas Clásicas & Especiales</h3>
+                            <p class="category-nav-card-desc">Selva Negra, Drip Cake con duraznos, torta de frutilla, Cookies & Cream y tortas en vaso individuales.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver catálogo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Pies & Cheesecakes -->
+                <a href="pies.html" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/tortas/Pai.webp" alt="Pies y Cheesecakes Artesanales">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Pies & Cheesecakes</h3>
+                            <p class="category-nav-card-desc">Pie de Limón con merengue italiano dorado en picos y Cheesecake cremoso de Maracuyá tropical.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver catálogo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Tortas Personalizadas -->
+                <a href="personalizadas.html" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/tortas_personalizadas/torta_personalizada2.webp" alt="Tortas Personalizadas Temáticas">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Tortas Personalizadas</h3>
+                            <p class="category-nav-card-desc">Creaciones temáticas a tu gusto: modeladas en fondant, temática Mario Bros, capibaras, anime y eventos.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver diseños <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 4: Masitas & Bocaditos -->
+                <a href="masitas.html" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/masitas_dulces/masitas6.webp" alt="Masitas Dulces y Bocaditos">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Masitas & Bocaditos</h3>
+                            <p class="category-nav-card-desc">Alfajores bañados en chocolate, berlinesas rellenas, donas con chispas, medialunas hojaldradas y empanaditas.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver variedad <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 5: Cumpleaños & Fiestas -->
+                <a href="ocasiones.html#sec-cumpleanios" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/cumpleanios/Cumple1.webp" alt="Cumpleaños y Fiestas Temáticas">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Cumpleaños & Fiestas</h3>
+                            <p class="category-nav-card-desc">Sets temáticos Barbie, montajes de Paw Patrol y tortas festivas para celebrar a lo grande.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver celebraciones <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 6: Amor & Amistad -->
+                <a href="ocasiones.html#sec-amor" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/amor_amistad/Amor_amistad1.webp" alt="Amor y Amistad Detalles Dulces">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Amor & Amistad</h3>
+                            <p class="category-nav-card-desc">Mini tortas rosas con pétalos de cacao, alfajores tiernos unicornio y dulces para compartir en pareja.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver detalles <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 7: Reuniones & Eventos -->
+                <a href="ocasiones.html#sec-eventos" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/reuniones_eventos/Reunion_evento2.webp" alt="Reuniones y Eventos de Gala">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Reuniones & Eventos</h3>
+                            <p class="category-nav-card-desc">Mesas monumentales de gala con fuentes de cristal para 15 años y bodas, además de baby shower.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver montajes <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 8: Regalos & Cajas Especiales -->
+                <a href="ocasiones.html#sec-regalos" class="category-nav-card">
+                    <div class="category-nav-card-img-wrapper">
+                        <img src="images/regalos/regalo1.png" alt="Cajas de Regalo y Detalles Dulces">
+                    </div>
+                    <div class="category-nav-card-body">
+                        <div>
+                            <h3 class="category-nav-card-title">Regalos & Detalles</h3>
+                            <p class="category-nav-card-desc">Cajas con rollos suizos gourmet y frutas, y cajas temáticas de alfajores Bart Simpson con moños.</p>
+                        </div>
+                        <span class="category-nav-card-cta">Ver regalos <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: BROWNIES (Sello Estrella de la Casa) -->
+        <section class="prod-signature-section" id="sec-brownies">
+            <div class="signature-bento">
+                <div class="signature-info-side">
+                    <span class="prod-badge-light"><i class="fa-solid fa-star"></i> Nuestra Especialidad</span>
+                    <h2>BROWNIES DE CHOCOLATE</h2>
+                    <p>El corazón y origen de nuestra pastelería. Textura densa, húmeda y melosa por dentro, con una fina corteza crujiente por fuera y el inconfundible sabor a chocolate puro.</p>
+                    <button class="btn-outline-light add-to-cart-btn" data-name="Pack de Brownies Clásicos" data-price="25">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar Pack Brownies (Bs. 25)
                     </button>
                 </div>
-                <div class="catalog-cards">
-                    <!-- =====================================================
-                         IMAGEN DE CARD TORTAS 1:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-red">
-                        <!-- <img src="images/torta-1.jpg" alt="Torta de chocolate"> -->
+
+                <div class="signature-cards-side">
+                    <div class="product-card-unit">
+                        <div class="square-card border-red framed-white floating-card">
+                            <img src="images/brownies/brownie.jpg" alt="Brownie Clásico Fudge de Chocolate">
+                        </div>
+                        <div class="card-mini-caption">
+                            <strong>Clásico Fudge Intenso</strong>
+                            <span>Bs. 25 / Pack x4</span>
+                        </div>
+                        <button class="btn-cart-sm add-to-cart-btn" data-name="Brownies Clásicos (Pack x4)" data-price="25">
+                            <i class="fa-solid fa-cart-plus"></i> Añadir
+                        </button>
                     </div>
 
-                    <!-- =====================================================
-                         IMAGEN DE CARD TORTAS 2:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-red">
-                        <!-- <img src="images/torta-2.jpg" alt="Torta especial"> -->
+                    <div class="product-card-unit">
+                        <div class="square-card border-red framed-white floating-card float-delay-2">
+                            <img src="images/brownies/brownie_con_almendra.jpg" alt="Brownie Especial con Enrejado de Caramelo">
+                        </div>
+                        <div class="card-mini-caption">
+                            <strong>Caramelo & Manjar</strong>
+                            <span>Bs. 30 / Pack x4</span>
+                        </div>
+                        <button class="btn-cart-sm add-to-cart-btn" data-name="Brownies con Caramelo (Pack x4)" data-price="30">
+                            <i class="fa-solid fa-cart-plus"></i> Añadir
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. TORTAS PERSONALIZADAS (Fondo guindo/rojo oscuro) -->
-        <section class="catalog-band band-dark">
-            <div class="catalog-container">
-                <div class="catalog-info">
-                    <h2>TORTAS<br>PERSONALIZADAS</h2>
-                    <p>¡Tu idea hecha torta! Diseñamos deliciosas creaciones a tu gusto, con decoraciones y detalles únicos para celebrar tus momentos más especiales.</p>
-                    <button class="btn-outline-light add-to-cart-btn" data-name="Torta Personalizada" data-price="130">
-                        Reservar Personalizada (Bs. 130)
-                    </button>
-                </div>
-                <div class="catalog-cards">
-                    <!-- =====================================================
-                         IMAGEN DE CARD TORTAS PERSONALIZADAS 1:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/torta-personalizada-1.jpg" alt="Torta personalizada 1"> -->
+        <!-- SECCIÓN 3: QUEQUES (Para la Hora del Té) -->
+        <section class="prod-zigzag-section" id="sec-queques">
+            <div class="zigzag-container">
+                <div class="zigzag-gallery">
+                    <div class="product-card-unit">
+                        <div class="square-card border-red floating-card float-delay-1">
+                            <img src="images/queques/queque1.webp" alt="Queque Casero Tradicional Tipo Inglés">
+                        </div>
+                        <div class="card-mini-caption">
+                            <strong>Tradicional Casero</strong>
+                            <span>Bs. 30</span>
+                        </div>
+                        <button class="btn-cart-sm add-to-cart-btn" data-name="Queque Tradicional Casero" data-price="30">
+                            <i class="fa-solid fa-cart-plus"></i> Añadir
+                        </button>
                     </div>
 
-                    <!-- =====================================================
-                         IMAGEN DE CARD TORTAS PERSONALIZADAS 2:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/torta-personalizada-2.jpg" alt="Torta personalizada 2"> -->
+                    <div class="product-card-unit">
+                        <div class="square-card border-red floating-card float-delay-3">
+                            <img src="images/queques/queque2.png" alt="Queque Bañado en Ganache de Chocolate">
+                        </div>
+                        <div class="card-mini-caption">
+                            <strong>Bañado en Chocolate</strong>
+                            <span>Bs. 45</span>
+                        </div>
+                        <button class="btn-cart-sm add-to-cart-btn" data-name="Queque Bañado en Chocolate" data-price="45">
+                            <i class="fa-solid fa-cart-plus"></i> Añadir
+                        </button>
                     </div>
+                </div>
+
+                <div class="zigzag-text-box">
+                    <span class="prod-badge">Para la Hora del Té</span>
+                    <h2>QUEQUES CASEROS</h2>
+                    <p>Suaves, esponjosos y con ese sabor tradicional que reconforta. Ideales para el desayuno, la merienda de la tarde o acompañar tu café o té en familia.</p>
+                    <button class="btn-outline add-to-cart-btn" data-name="Queque Tradicional Casero" data-price="30">
+                        <i class="fa-solid fa-plus"></i> Agregar Queque al carrito (Bs. 30)
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- 3. QUEQUES (Fondo claro) -->
-        <section class="catalog-band band-light">
-            <div class="catalog-container">
-                <div class="catalog-info">
-                    <h2>QUEQUES</h2>
-                    <p>Disfruta de nuestros deliciosos queques, suaves, esponjosos y llenos de sabor. Perfectos para acompañar tus tardes, compartir en familia o darte un dulce gustito.</p>
-                    <button class="btn-outline add-to-cart-btn" data-name="Queque Artesanal" data-price="35">
-                        Agregar Queque al carrito (Bs. 35)
-                    </button>
-                </div>
-                <div class="catalog-cards">
-                    <!-- =====================================================
-                         IMAGEN DE CARD QUEQUES 1:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-red">
-                        <!-- <img src="images/queque-1.jpg" alt="Queque casero 1"> -->
-                    </div>
-
-                    <!-- =====================================================
-                         IMAGEN DE CARD QUEQUES 2:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-red">
-                        <!-- <img src="images/queque-2.jpg" alt="Queque casero 2"> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. BROWNIES (Fondo guindo/rojo oscuro) -->
-        <section class="catalog-band band-dark">
-            <div class="catalog-container">
-                <div class="catalog-info">
-                    <h2>BROWNIES</h2>
-                    <p>Déjate conquistar por nuestros irresistibles brownies, con una textura suave, un intenso sabor a chocolate y ese toque dulce que convierte cada bocado en un momento especial.</p>
-                    <button class="btn-outline-light add-to-cart-btn" data-name="Pack de Brownies" data-price="40">
-                        Agregar Pack Brownies (Bs. 40)
-                    </button>
-                </div>
-                <div class="catalog-cards">
-                    <!-- =====================================================
-                         IMAGEN DE CARD BROWNIES 1:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/brownie-1.jpg" alt="Brownies de chocolate 1"> -->
-                    </div>
-
-                    <!-- =====================================================
-                         IMAGEN DE CARD BROWNIES 2:
-                         Descomenta <img> y coloca el nombre de tu imagen
-                         ===================================================== -->
-                    <div class="square-card border-white">
-                        <!-- <img src="images/brownie-2.jpg" alt="Brownies de chocolate 2"> -->
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Modal Usuario -->
