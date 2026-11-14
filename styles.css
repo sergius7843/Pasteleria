@@ -22,7 +22,16 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 175px;
     -webkit-text-size-adjust: 100%;
+}
+
+/* Margen superior de compensación para navegación con anclas (#) debido al encabezado fijo */
+section[id],
+.occasion-row,
+.prod-signature-section,
+.prod-zigzag-section {
+    scroll-margin-top: 175px;
 }
 
 body {
@@ -177,13 +186,11 @@ main {
    CARRUSEL PEQUEÑO DE PALABRAS EN MOVIMIENTO CONTINUO (DEBAJO DEL NAVBAR)
    ========================================================================== */
 .word-ticker {
-    width: 100%;
-    display: block;
     background-color: var(--brand-red);
     color: var(--bg-white);
     overflow: hidden;
     white-space: nowrap;
-    padding: 7px 0;
+    padding: 6px 0;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -192,9 +199,7 @@ main {
 
 .word-ticker-track {
     display: flex;
-    flex-wrap: nowrap;
     width: max-content;
-    will-change: transform;
     animation: tickerMove 28s linear infinite;
 }
 
@@ -206,9 +211,6 @@ main {
 .ticker-group {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    white-space: nowrap;
     gap: 48px;
     padding-right: 48px;
 }
@@ -989,14 +991,6 @@ main {
     margin: 0 auto 50px;
     padding: 0 4%;
     justify-items: center;
-}
-
-.dedicated-catalog-grid .product-card-unit {
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
 }
 
 /* Insignias de categoría */

@@ -339,5 +339,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Desplazamiento suave y preciso para anclas internas compensando la cabecera fija
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if (!hash || hash === '#') return;
+            const targetEl = document.querySelector(hash);
+            if (targetEl) {
+                e.preventDefault();
+                const header = document.querySelector('.site-header');
+                const headerH = header ? header.getBoundingClientRect().height : 150;
+                const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: targetTop - headerH - 18,
+                    behavior: 'smooth'
+                });
+
+                if (this.classList.contains('cat-chip')) {
+                    document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            }
+        });
+    });
+
     saveAndRenderCart();
 });
