@@ -50,6 +50,19 @@ main {
     width: 100%;
 }
 
+/* Utilidad accesible para SEO y lectores de pantalla (oculta visualmente pero indexable) */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
 .script-heading {
     font-family: 'Lobster Two', cursive;
     font-style: italic;
@@ -582,16 +595,25 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    animation: fadeIn 0.45s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .carousel-slide.active {
     display: flex;
+    opacity: 1;
+    animation: carouselSlideIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes carouselSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .slide-text {
@@ -627,19 +649,40 @@ main {
 
 .carousel-arrow {
     position: absolute;
-    top: 46%;
+    top: 48%;
     transform: translateY(-50%);
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid rgba(128, 0, 0, 0.22);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--brand-red);
-    font-size: 2.2rem;
+    font-size: 1.25rem;
     cursor: pointer;
-    padding: 8px;
-    z-index: 5;
+    padding: 0;
+    z-index: 6;
+    box-shadow: 0 4px 14px rgba(128, 0, 0, 0.14);
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(4px);
 }
 
-.carousel-arrow.prev { left: 10px; }
-.carousel-arrow.next { right: 10px; }
+.carousel-arrow:hover {
+    background: var(--brand-red);
+    color: var(--bg-white);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 18px rgba(128, 0, 0, 0.26);
+    border-color: var(--brand-red);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+.carousel-arrow.prev { left: 8px; }
+.carousel-arrow.next { right: 8px; }
 
 .carousel-dots {
     display: flex;

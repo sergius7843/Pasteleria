@@ -173,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.getElementById('carousel-prev');
     const nextBtn = document.getElementById('carousel-next');
+    const carouselSection = document.querySelector('.carousel-section');
 
     if (slides.length > 0) {
         let currentSlide = 0;
@@ -199,7 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function startAutoSlide() {
-            slideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Rotación cada 5 segundos
         }
 
         function resetAutoSlide() {
@@ -207,25 +209,66 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoSlide();
         }
 
+        // Navegación con flechas laterales
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 nextSlide();
                 resetAutoSlide();
             });
         }
 
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 prevSlide();
                 resetAutoSlide();
             });
         }
 
+        // Navegación con los puntos indicadores
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
                 showSlide( parseInt(dot.dataset.slide, 10) );
                 resetAutoSlide();
             });
+        });
+
+        // Pausar rotación automática al pasar el mouse por el carrusel
+        if (carouselSection) {
+            carouselSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            carouselSection.addEventListener('mouseleave', () => resetAutoSlide());
+
+            // Soporte para gestos táctiles (Swipe en celulares)
+            let touchStartX = 0;
+            let touchEndX = 0;
+            carouselSection.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carouselSection.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) {
+                        nextSlide(); // Deslizó a la izquierda -> siguiente
+                    } else {
+                        prevSlide(); // Deslizó a la derecha -> anterior
+                    }
+                    resetAutoSlide();
+                }
+            }, { passive: true });
+        }
+
+        // Navegación con teclado (Flechas izquierda y derecha)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetAutoSlide();
+            }
         });
 
         startAutoSlide();

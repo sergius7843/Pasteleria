@@ -3,12 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownies Pastelería | Inicio</title>
+    <title>Brownies Pastelería | Tortas, Brownies y Postres Artesanales en El Alto y La Paz</title>
+    <meta name="description" content="Pastelería artesanal en El Alto y La Paz, Bolivia. Especialistas en brownies de chocolate puro, tortas clásicas, tortas personalizadas, pies y masitas recién horneadas. Sucursales en Av. Pucarani y Plaza La Paz. Pedidos: +591 68081109.">
+    <meta name="keywords" content="pasteleria en El Alto, tortas en El Alto, brownies El Alto, pasteleria La Paz Bolivia, tortas personalizadas El Alto, tortas Plaza Ballivian, pasteleria Plaza La Paz, brownies de chocolate, postres a domicilio El Alto">
+    <meta name="author" content="Brownies Pastelería">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sergius7843.github.io/Pasteleria/">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Brownies Pastelería | Tortas, Brownies y Postres en El Alto y La Paz">
+    <meta property="og:description" content="Recién horneados todos los días. Brownies de chocolate puro, tortas temáticas personalizadas y postres artesanales en El Alto y La Paz.">
+    <meta property="og:image" content="https://sergius7843.github.io/Pasteleria/images/logotipo.png">
+    <meta property="og:url" content="https://sergius7843.github.io/Pasteleria/">
+    <meta property="og:site_name" content="Brownies Pastelería">
+    <meta property="og:locale" content="es_BO">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brownies Pastelería | Tortas y Brownies en El Alto">
+    <meta name="twitter:description" content="Pastelería artesanal en El Alto y La Paz. Brownies, tortas personalizadas y bocaditos recién horneados.">
+    <meta name="twitter:image" content="https://sergius7843.github.io/Pasteleria/images/logotipo.png">
+
+    <!-- Schema.org Datos Estructurados JSON-LD (LocalBusiness / Bakery) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Brownies Pastelería",
+      "image": "https://sergius7843.github.io/Pasteleria/images/logotipo.png",
+      "@id": "https://sergius7843.github.io/Pasteleria/#bakery",
+      "url": "https://sergius7843.github.io/Pasteleria/",
+      "telephone": "+59168081109",
+      "priceRange": "Bs. 20 - Bs. 250",
+      "servesCuisine": ["Pastelería Artesanal", "Repostería", "Tortas", "Brownies", "Postres Bolivianos"],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Avenida Pucarani, media cuadra antes de Plaza Ballivián",
+          "addressLocality": "El Alto",
+          "addressRegion": "La Paz",
+          "addressCountry": "BO"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Plaza La Paz, al frente del Colegio Los Andes",
+          "addressLocality": "El Alto",
+          "addressRegion": "La Paz",
+          "addressCountry": "BO"
+        }
+      ],
+      "geo": [
+        {
+          "@type": "GeoCoordinates",
+          "latitude": -16.4950,
+          "longitude": -68.1630
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "21:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Menú de Brownies Pastelería",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Brownies",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Brownies Clásicos Fudge (Pack x4)",
+                  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "BOB" }
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Tortas Clásicas",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Torta Selva Negra Tradicional",
+                  "offers": { "@type": "Offer", "price": "90", "priceCurrency": "BOB" }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=2.2">
+    <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body>
 
@@ -145,9 +246,12 @@
          CONTENIDO PRINCIPAL: CARRUSEL, MÁS VENDIDOS Y PEDIDOS ESPECIALES
          ================================================================= -->
     <main>
+        <!-- H1 Semántico para SEO y Accesibilidad -->
+        <h1 class="sr-only">Brownies Pastelería | Pastelería Artesanal, Tortas y Brownies en El Alto y La Paz, Bolivia</h1>
+
         <!-- CARRUSEL PRINCIPAL -->
-        <section class="carousel-section">
-            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Anterior">
+        <section class="carousel-section" aria-label="Productos destacados de temporada">
+            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Anterior diapositiva" title="Anterior">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
